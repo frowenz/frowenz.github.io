@@ -1,0 +1,127 @@
+body {
+    background-color: #6c547e;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 0;
+    color: white;
+    width: 100%;
+    font-size: 12.5px;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#text-container {
+    display: flex;
+    margin-top: 75px;
+    margin-left: 75px;
+
+    width: 800px;
+}
+
+#container {
+    display: flex;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.flex-column {
+    display: block;
+    width: 65%;
+    margin-right: 2%;
+}
+
+.invert {
+    cursor: pointer;
+    filter: invert(100%);
+    justify-self: center;
+    height: auto;
+    max-width: 100%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    min-width: fit-content;
+    visibility: hidden;
+    background-color: #ffffff;
+    color: #6c547e;
+    text-align: left;
+    padding: 1.5px;
+    padding-right: 2px;
+    padding-left: 2px;
+
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1;
+    font-size: 12.5px;
+    animation: fadeIn 4s;
+    margin-top: 22.5px;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 85%;
+    left: 7.5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(255, 255, 255)  rgb(255, 255, 255) ;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.info:hover .tooltiptext-info {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+#canvas {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    margin-right: calc((100dvw - (595px + min(100dvw - 600px, 50dvh)))/2);
+    margin-left: calc((100dvw - (595px + min(100dvw - 600px, 50dvh)))/2);
+    /* margin-right: 75px; */
+    width: calc(100dvw - 600px);
+    height: calc(100dvw - 600px);
+    /* background-color: #000000; */
+
+    max-height: 50dvh;
+    max-width: 50dvh;
+    transform: translate(0, 50%);
+}
+
+
+
+@media (max-width: 1000px) {
+    /* #canvas {
+        display: none;
+    } */
+
+    /* #text-container {
+        display: flex;
+        margin-top: 15%;
+        margin-left: 15%;
+    } */
+  }
+
+
+/* @media (max-width: 600px) {
+    #text-container {
+        display: flex;
+        margin-top: 15%;
+        margin-left: 15%;
+    }
+  }  */
