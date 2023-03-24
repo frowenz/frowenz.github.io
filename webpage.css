@@ -106,22 +106,25 @@ a:hover {
 
 
 @media (max-width: 1000px) {
-    /* #canvas {
+    #canvas {
         display: none;
-    } */
+    }
+}
 
-    /* #text-container {
-        display: flex;
-        margin-top: 15%;
-        margin-left: 15%;
-    } */
-  }
-
-
-/* @media (max-width: 600px) {
+    /*
     #text-container {
         display: flex;
         margin-top: 15%;
         margin-left: 15%;
+    } 
+    */
+    
+    /* 
+    @media (max-width: 600px) {
+        #text-container {
+        display: flex;
+        margin-top: 15%;
+        margin-left: 15%;
     }
-  }  */
+  }  
+*/

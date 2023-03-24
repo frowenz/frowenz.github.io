@@ -135,8 +135,8 @@ function drawFace(v1, v2, v3) {
 // MAX R = 250
 var T_x = 0
 var T_y = 0
-var R = randomWithProbability([100, 250])
-var R0 = randomWithProbability([20, 100, 250])
+var R = randomWithProbability([100, 150, 250, 250])
+var R0 = randomWithProbability([20, 100, 150, 250])
 
 const noStellation = randomWithProbability(Array(20).fill(0).concat([1]))
 const doubleStellation = randomWithProbability([0, 1, 1, 0])
