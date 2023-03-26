@@ -7,10 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: false });
 });
 
-document.addEventListener('touchmove', function (event) {
-    event.preventDefault();
-}, { passive: false, capture: false });
-
 function preventDefault(e) {
     e.preventDefault();
 }
