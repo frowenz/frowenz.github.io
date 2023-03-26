@@ -322,7 +322,8 @@ var shapeType = randomWithProbability(["iso", "dodeca", "both"])
 var T_x = 0
 var T_y = 0
 var R = randomWithProbability([150, 250, 250])
-var R0 = randomWithProbability([20, 100, 166, 225])
+// var R0 = randomWithProbability([20, 40, 100, 166, 225])
+var R0 = randomWithProbability([40])
 
 const noStellation = randomWithProbability(Array(20).fill(0).concat([1]))
 const stellation = randomWithProbability([[0, 1], [1, 0], [1, 1]])
@@ -377,7 +378,6 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
-
 
 var ctx, canvas;
 window.addEventListener("load", () => {
