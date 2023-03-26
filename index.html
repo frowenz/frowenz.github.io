@@ -48,56 +48,137 @@
         window.location.href = "https://github.com/frowenz";
     }
 
+    var mouseOnShape = false;
     function redirectToDesmos() {
-        window.open("https://www.desmos.com/calculator/r9pt4avoi4")
+        if (mouseOnShape) {
+            window.open("https://www.desmos.com/calculator/ng1nf4dke2")
+        }
     }
 
+    function viewAbout() {
+        let abouts = document.getElementsByClassName('about');
+        let projects = document.getElementsByClassName('projects')[0];
+        if (projects.style.display != "none") {
+            projects.style.display = "none";
 
+            for (let i = 0; i < abouts.length; i++) {
+                let about = abouts[i];
+                about.style.display = "block";
+            }
+        }
+    }
+
+    function viewProjects() {
+        let abouts = document.getElementsByClassName('about');
+        let projects = document.getElementsByClassName('projects')[0];
+        for (let i = 0; i < abouts.length; i++) {
+            let about = abouts[i];
+            if (about.style.display != "none") {
+                about.style.display = "none";
+                projects.style.display = "block";
+            }
+        }
+    }
 </script>
-<script src="polyhedra.js"></script>
+<script src="shapes.js"></script>
 
 <body>
     <div id="text-container">
         <div class="flex-column">
-            <!-- <h1 style="border-bottom: solid 3px #32333b; font-size: 2.5rem"> Owen Fahey </h1> -->
-            <span style="font-weight: 1000; font-size: 15px; font-family: 'Source Code Pro', monospace; color: white ">
-                Owen Fahey</span>
-            <br>
-            <a href="">About</a> •
-            <a href="">Projects & Work</a>
 
-            <br>
-            <br>
+            <div>
+                <!-- <h1 style="border-bottom: solid 3px #32333b; font-size: 2.5rem"> Owen Fahey </h1> -->
+                <span style="font-weight: 1000; font-size: 16px">
+                    Owen Fahey</span>
+                <br>
+                <span class="heading" onclick=viewAbout()>About</span>
+                •
+                <span class="heading" onclick=viewProjects()>Technical Work</span>
 
-            <p> Hello! I am an undergraduate at the University of Chicago ('24) pursuing degrees in Computer
-                Science and Philosophy. </p>
-
-            <span> I currently work as a software developer at the
-                <a href="http://salavon.com/"> Jason Salavon Studio</a>.
-            </span>
-            <span> Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
-                synthetic data generation pipeline. I am looking for back-end and fullstack roles.
-            </span>
-
-            <br>
-            <br>
-
-            <div onclick="redirectToGithub()" style="cursor: pointer; display:flex; max-width: fit-content;">
-                <img onclick="redirectToGithub()" class="invert" width="15" height="15" src="src/logo-github.svg"
-                    draggable="false">
-                <span>&nbsp;frowenz </span>
+                <br>
+                <br>
             </div>
 
-            <div style="cursor: pointer; display: flex; max-width: fit-content;" class="info"
-                onclick=copyEmailToClipboard() onmouseover="resetToolTip()">
-                <img class="invert" width="15" height="15" src="src/mail.svg" draggable="false">
-                <!-- <span class="tooltip">copied</span> -->
-                <span>&nbsp;</span>
-                <img style="margin-top: auto; margin-bottom: auto" src="src/email.png" height="15" draggable="false">
-                <span class="tooltiptext tooltiptext-info "> Click to copy</span>
+            <div class="about">
+                <p> Hello! I am an undergraduate at the University of Chicago ('24) pursuing degrees in Computer
+                    Science and Philosophy. </p>
+
+                <span> I currently work as a software developer at the
+                    <a href="http://salavon.com/"> Jason Salavon Studio</a>.
+                </span>
+                <span> Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
+                    synthetic data generation pipeline. I am looking for back-end and full-stack roles.
+                </span>
+                <br>
+                <br>
+            </div>
+            <div class="projects" style="display: none">
+                <div class="heading-container">
+                    <div class="growingLine"></div>
+                    <span style="font-weight: 500; font-size: 14px"> Jason Salavon Studio </span>
+                </div>
+                <span> I've spent the past year working as a lead developer alongisde a small team of artists,
+                    designers and developers, creating an enormous artwork measuring 100,000 x 58,000 pixels. The piece
+                    consists of thousands of WebP animations that blend together on both local and global levels.
+                    The artwork was generated by utilizing GPT-3 to create thousands of prompts for stable diffusion.
+                    <br>
+                    <br>
+                    My primary responsibility is building the site that houses the piece using React, Node.js,
+                    JavaScript, Leaflet, HTML, and CSS. I also write Python scripts for tasks like processing
+                    JSON/YAML data, calculating tile placement, and converting Wikipedia page titles into tokens
+                    using the Wikimedia Rest API. Additionally, I manage files on the Apache Server and handle some
+                    basic SysOps tasks.
+                    <br>
+                    <br>
+                    While the project remains unreleased, you can catch a glimpse of an early version's first frame:
+                    <a href="src/todem_preview.png"> here</a><span>.</span>
+                </span>
+                <br>
+                <br>
+                <br>
+                <div class="heading-container">
+                    <div class="growingLine"></div>
+                    <span style="font-weight: 500; font-size: 14px"> Lexset.ai
+                    </span>
+                </div>
+                </span>
+                <span> I spent Winter and Spring in 2022 working as a software engineering intern for </span> <a
+                    href="https://lexset.ai"> Lexset.ai</a><span>, a
+                    startup creating labeled synthetic image data for comptuer vision models using procedural
+                    generation.
+
+                    I worked on a variety of projects processing 3D content and adding modules to the image
+                    generation pipeline with Python, OpenCV, the Blender API. I also built a GUI in Python
+                    to tag for HDR files.
+
+                    I generated two datasets of synthetic images of alphanumeric American Sign Language signs, which can
+                    be found </span>
+                <a href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet">here</a>.
+                <span>These datasets played a decisive factor in securing a major client. </span>
+
+            </div>
+
+            <div class="about">
+
+                <div onclick="redirectToGithub()" style="cursor: pointer; display:flex; max-width: fit-content;">
+                    <img onclick="redirectToGithub()" class="invert" width="15" height="15" src="src/logo-github.svg"
+                        draggable="false">
+                    <span>&nbsp;frowenz </span>
+                </div>
+
+                <div style="cursor: pointer; display: flex; max-width: fit-content;" class="info"
+                    onclick=copyEmailToClipboard() onmouseover=resetToolTip()>
+                    <img class="invert" width="15" height="15" src="src/mail.svg" draggable="false">
+                    <!-- <span class="tooltip">copied</span> -->
+                    <span>&nbsp;</span>
+                    <img style="margin-top: auto; margin-bottom: auto" src="src/email.png" height="15"
+                        draggable="false">
+                    <span class="tooltiptext tooltiptext-info "> Click to copy</span>
+                </div>
             </div>
         </div>
     </div>
     <canvas id="canvas" onclick=redirectToDesmos()></canvas>
+    <script src="shapeRedirect.js"></script>
+    <script src="scrollHandler.js"></script>
 </body>
-

@@ -1,10 +1,28 @@
 body {
-    background-color: #6c547e;
+    background-color: #67497c;
     font-family: 'Source Code Pro', monospace;
     font-weight: 0;
     color: white;
     width: 100%;
+    height: 100%;
     font-size: 12.5px;
+    position: fixed;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.heading {
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 1000;
 }
 
 a {
@@ -21,21 +39,11 @@ a:hover {
     display: flex;
     margin-top: 75px;
     margin-left: 75px;
-
-    width: 800px;
-}
-
-#container {
-    display: flex;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-bottom: 2%;
+    width: 650px;
 }
 
 .flex-column {
     display: block;
-    width: 65%;
-    margin-right: 2%;
 }
 
 .invert {
@@ -49,6 +57,14 @@ a:hover {
 .tooltip {
     position: relative;
     display: inline-block;
+}
+
+.projects {
+    /* height: calc(100dvh - 273px); */
+    height: calc(100dvh - 211.5px);
+    direction: rtl;
+    overflow-y: scroll;
+    /* scrollbar-width: none; */
 }
 
 .tooltiptext {
@@ -69,6 +85,26 @@ a:hover {
     margin-top: 22.5px;
 }
 
+.heading-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 7px;
+}
+
+.line {
+    width: 100%;
+    border-top: 0.5px solid rgb(255, 255, 255);
+}
+
+.growingLine {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+
 .tooltiptext::after {
     content: " ";
     position: absolute;
@@ -76,7 +112,7 @@ a:hover {
     left: 7.5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent rgb(255, 255, 255)  rgb(255, 255, 255) ;
+    border-color: transparent transparent rgb(255, 255, 255) rgb(255, 255, 255);
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -91,18 +127,17 @@ a:hover {
     top: 0px;
     right: 0px;
 
-    margin-right: calc((100dvw - (595px + min(100dvw - 600px, 50dvh)))/2);
-    margin-left: calc((100dvw - (595px + min(100dvw - 600px, 50dvh)))/2);
-    /* margin-right: 75px; */
-    width: calc(100dvw - 600px);
-    height: calc(100dvw - 600px);
-    /* background-color: #000000; */
+    margin-right: calc( (calc(100dvw - 712px) - min((100dvw - 712px), 60dvh)) / 2);
+    /* margin-left: calc((100dvw - (595px + min(100dvw - 600px, 50dvh)))/2); */
 
-    max-height: 50dvh;
-    max-width: 50dvh;
-    transform: translate(0, 50%);
+    width: calc(100dvw - 712px);
+    /* width: calc(100dvw - 600px); */
+    height: auto;
+
+    max-height: 60dvh;
+    max-width: 60dvh;
+    transform: translate(0, calc((100dvh - min((100dvw - 712px), 60dvh)) / 2));
 }
-
 
 
 @media (max-width: 1000px) {
@@ -111,15 +146,39 @@ a:hover {
     }
 }
 
-    /*
+@media (max-width: 800px) {
+    #text-container {
+        display: flex;
+        margin-top: 50px;
+        margin-left: 50px;
+        width: 70%;
+    }
+
+    .projects {
+        height: calc(100dvh - 161.5px);
+    }
+}
+
+@media (max-width: 600px) {
+    #text-container {
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    .projects {
+        height: calc(100dvh - 111.5px);
+    }
+}
+
+/*
     #text-container {
         display: flex;
         margin-top: 15%;
         margin-left: 15%;
     } 
     */
-    
-    /* 
+
+/* 
     @media (max-width: 600px) {
         #text-container {
         display: flex;
