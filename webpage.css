@@ -62,7 +62,6 @@ a:hover {
 .projects {
     /* height: calc(100dvh - 273px); */
     height: calc(100dvh - 211.5px);
-    direction: rtl;
     overflow-y: scroll;
     /* scrollbar-width: none; */
 }
