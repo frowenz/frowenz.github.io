@@ -1,13 +1,13 @@
+
 document.addEventListener('DOMContentLoaded', function () {
-    const aboutDiv = document.querySelector('flex-container');
-    conso
+    const flexDiv = document.querySelector('flex-container');
 
     window.addEventListener('wheel', function (event) {
-        const isAtTop = aboutDiv.scrollTop === 0 && event.deltaY < 0;
-        const isAtBottom = aboutDiv.scrollTop + textDiv.clientHeight === aboutDiv.scrollHeight && event.deltaY > 0;
+        const isAtTop = flexDiv.scrollTop === 0 && event.deltaY < 0;
+        const isAtBottom = flexDiv.scrollTop + flexDiv.clientHeight === flexDiv.scrollHeight && event.deltaY > 0;
 
         if (!isAtTop && !isAtBottom) {
-            aboutDiv.scrollTop += event.deltaY;
+            flexDiv.scrollTop += event.deltaY;
         }
     }, { passive: false });
 });
