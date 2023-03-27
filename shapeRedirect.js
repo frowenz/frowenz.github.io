@@ -2,48 +2,7 @@
 const cnvs = document.getElementById('canvas');
 const ctxx = cnvs.getContext('2d');
 
-function drawDot(x, y) {
-    const dotRadius = 2; // Change this value to adjust the size of the dot
-
-    ctx.beginPath();
-    ctx.arc(x, y, dotRadius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'black';
-    ctx.fill();
-    ctx.closePath();
-}
-
-cnvs.addEventListener('mousedown', startDrawing);
-cnvs.addEventListener('mousemove', draw);
-cnvs.addEventListener('mouseup', stopDrawing);
-
-let drawing = false;
-
-function drawDot(x, y, color) {
-    const dotRadius = 2; // Change this value to adjust the size of the dot
-    ctxx.beginPath();
-    ctxx.arc(x, y, dotRadius, 0, 2 * Math.PI);
-    ctxx.fillStyle = color;
-    ctxx.fill();
-    ctxx.closePath();
-}
-
-function startDrawing(event) {
-    drawing = true;
-    ctxx.beginPath();
-    ctxx.moveTo(getMousePosition(cnvs, event).x, getMousePosition(cnvs, event).y);
-}
-
-function draw(event) {
-    if (!drawing) return;
-    ctxx.lineTo(getMousePosition(cnvs, event).x, getMousePosition(cnvs, event).y);
-    ctxx.stroke();
-}
-
-function stopDrawing() {
-    drawing = false;
-}
-
-function getMousePosition(canvas, event) {
+function getMousePosition(cnvs, event) {
     const rect = cnvs.getBoundingClientRect();
     const scaleX = cnvs.width / rect.width;
     const scaleY = cnvs.height / rect.height;

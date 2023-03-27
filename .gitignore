@@ -1,3 +1,7 @@
 .DS_Store
 src/.DS_Store
-quicktyscripty.py
+computeFaces.py
+scrollHandler.js
+stellated_dodecahedron.js
+unused
+

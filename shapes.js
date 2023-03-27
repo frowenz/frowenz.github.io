@@ -343,6 +343,25 @@ const spin = randomWithProbability([
     [plusMinus * 0.005, plusMinus2 * 0.005]]
 )
 
+// var spin = [0, 0]
+// onmousemove = function (e) {
+//     if (canvas) {
+//         const canvasRect = canvas.getBoundingClientRect();
+
+//         const centerX = canvasRect.left + canvasRect.width / 2;
+//         const centerY = canvasRect.top + canvasRect.height / 2;
+
+//         const mouseX = e.clientX;
+//         const mouseY = e.clientY;
+
+//         const distanceX = mouseX - centerX
+//         const distanceY = mouseY - centerY
+
+//         spin = [(2 * distanceX / window.innerWidth) * -0.005, (2 * distanceY / window.innerHeight) * -0.005]
+//     }
+// }
+
+
 const flipRadii = randomWithProbability([0, 1])
 const timeOffset = [(Math.floor(Math.random() * 6.28318530718)), (Math.floor(Math.random() * 10000) + 1)]
 
