@@ -123,13 +123,13 @@ a:hover {
         display: flex;
         padding: 50px;
         padding-right: 0px;
-        width: 76%;
+        width: 75%;
     }
 }
 
 @media (max-width: 600px) {
     #text-container {
-        padding: 50px;
+        padding: 25px;
         padding-right: 0px;
     }
 }
