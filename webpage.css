@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-    color: white;
+    color: #93c196;
     text-decoration: none;
 }
 
@@ -70,6 +70,30 @@ a:hover {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
+}
+
+.github:hover .icon {
+    /* fill: rgb(115, 173, 119) */
+    fill: #93c196;
+}
+
+.github:hover .selectable {
+    /* color: rgb(115, 173, 119) */
+    color: #93c196;
+}
+
+.info:hover .icon {
+    fill: #93c196;
+}
+
+/* https://codepen.io/sosuke/pen/Pjoqqp */
+.info:hover .mail {
+    filter: invert(38%) sepia(17%) saturate(757%) hue-rotate(74deg) brightness(98%) contrast(91%);
+}
+
+
+svg {
+    fill: white;
 }
 
 .tooltiptext {
