@@ -1,27 +1,13 @@
-{/* <script src="scrollHandler.js"></script> */}
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutDiv = document.querySelector('flex-container');
+    conso
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const projectsDiv = document.querySelector('.projects');
+    window.addEventListener('wheel', function (event) {
+        const isAtTop = aboutDiv.scrollTop === 0 && event.deltaY < 0;
+        const isAtBottom = aboutDiv.scrollTop + textDiv.clientHeight === aboutDiv.scrollHeight && event.deltaY > 0;
 
-//     window.addEventListener('wheel', function (event) {
-//         const isAtTop = projectsDiv.scrollTop === 0 && event.deltaY < 0;
-//         const isAtBottom = projectsDiv.scrollTop + projectsDiv.clientHeight === projectsDiv.scrollHeight && event.deltaY > 0;
-//         if (isAtTop || isAtBottom) {
-//             event.preventDefault();
-//         }
-//         projectsDiv.scrollTop += event.deltaY;
-//     }, { passive: false });
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const projectsDiv = document.querySelector('.projects');
-
-//     window.addEventListener('wheel', function (event) {
-//         const isAtTop = projectsDiv.scrollTop === 0 && event.deltaY < 0;
-//         const isAtBottom = projectsDiv.scrollTop + projectsDiv.clientHeight === projectsDiv.scrollHeight && event.deltaY > 0;
-
-//         if (!isAtTop && !isAtBottom) {
-//             projectsDiv.scrollTop += event.deltaY;
-//         }
-//     }, { passive: false });
-// });
+        if (!isAtTop && !isAtBottom) {
+            aboutDiv.scrollTop += event.deltaY;
+        }
+    }, { passive: false });
+});

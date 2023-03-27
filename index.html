@@ -7,6 +7,8 @@
     <meta name="viewport"
         content=" width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
+    <title>Owen Fahey</title>
+
     <!-- Base Styling -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -54,52 +56,55 @@
 
 <body>
     <div id="text-container">
-        <span>
-            <span style="font-weight: 1000; font-size: 16px"> Owen Fahey </span>
-            <br>
-            <br>
-            Welcome to my site! I am an undergraduate student at the University of Chicago ('24) pursuing
-            degrees in
-            Computer Science and Philosophy.
-            <br>
-            <br>
-            I work as a software developer at the
-            <a href="http://salavon.com/"> Jason Salavon Studio</a>
-            where we are building a massive animated art piece with Stable Diffusion. Check out the first
-            frame from an early version <a href="src/todem_preview.png">here</a>.
-            <br>
-            <br>
-            Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
-            synthetic data generation pipeline. Check out <a
-                href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet">this dataset</a> of
-            synthetic ASL images I created.
-            <br>
-            <br>
-            I am looking for back-end and full-stack roles on highly collaborative teams working on
-            hard, interesting problems.
-        </span>
+        <span style="font-weight: 1000; font-size: 16px"> Owen Fahey </span>
+        <br>
+        <div class="flex-container about">
+            <span>
+                Welcome to my site! I am an undergraduate student at the University of Chicago ('24) pursuing
+                degrees in
+                Computer Science and Philosophy.
+                <br>
+                <br>
+                I work as a software developer at thek
+                <a href="http://salavon.com/"> Jason Salavon Studio</a>
+                where we are building a massive animated art piece with Stable Diffusion. Check out the first
+                frame from an early version <a href="src/todem_preview.png">here</a>.
+                <br>
+                <br>
+                Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
+                synthetic data generation pipeline. Check out <a
+                    href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet">this dataset</a> of
+                synthetic ASL images I created.
+                <br>
+                <br>
+                I am looking for back-end and full-stack roles on highly collaborative teams working on
+                hard, interesting problems.
+            </span>
 
-        <div class="unselectable" style="margin-bottom: auto;">
-            <br>
-            <div onclick="redirectToGithub()" style="cursor: pointer; display:flex; max-width: fit-content;">
-                <img class="icon" onclick="redirectToGithub()" width="15" height="15" src="src/logo-github.svg"
-                    draggable="false">
-                <span class="selectable">&nbsp;frowenz </span>
-            </div>
+            <div class="unselectable" style="margin-bottom: auto;">
+                <br>
+                <div onclick="redirectToGithub()" style="cursor: pointer; display:flex; max-width: fit-content;">
+                    <img class="icon" onclick="redirectToGithub()" width="15" height="15" src="src/logo-github.svg"
+                        draggable="false">
+                    <span class="selectable">&nbsp;frowenz </span>
+                </div>
 
-            <div style="cursor: pointer; display: flex; max-width: fit-content;" class="info"
-                onclick=copyEmailToClipboard() onmouseover=resetToolTip()>
-                <img class="icon" width="15" height="15" src="src/mail.svg" draggable="false">
-                <span>&nbsp;</span>
-                <img style="margin-top: auto; margin-bottom: auto" src="src/email.png" height="15" draggable="false">
-                <span class="tooltiptext tooltiptext-info "></span>
+                <div style="cursor: pointer; display: flex; max-width: fit-content;" class="info"
+                    onclick=copyEmailToClipboard() onmouseover=resetToolTip()>
+                    <img class="icon" width="15" height="15" src="src/mail.svg" draggable="false">
+                    <span>&nbsp;</span>
+                    <img style="margin-top: auto; margin-bottom: auto" src="src/email.png" height="15"
+                        draggable="false">
+                    <span class="tooltiptext tooltiptext-info "></span>
+                </div>
+                <br>
             </div>
-            <br>
+            <span> Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
+                    href="https://lucasgelfond.online/">Lucas Gelfond</a> for inspiration.
+            </span>
         </div>
-        <span> Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
-                href="https://lucasgelfond.online/">Lucas Gelfond</a> for inspiration.
-        </span>
     </div>
     <canvas id="canvas" onclick=redirectToDesmos()></canvas>
     <script src="shapeRedirect.js"></script>
+    <script src="scrollHandler.js"></script>
 </body>
