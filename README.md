@@ -1,7 +1,6 @@
 # [frowenz.github.io](https://frowenz.github.io/)
 
-<pre>
-```
+<pre style="line-height: 1.15;">
         _- _.
      _-',^. `-_.
  ._-' ,'   `.   `-_ 
@@ -14,5 +13,4 @@
  '-_    `:!;;;;;;;'
     `-_, :!;;;''
         `-!'        
-```
 </pre>
