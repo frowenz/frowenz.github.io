@@ -313,17 +313,21 @@ function drawFace(v1, v2, v3) {
     ctx.lineTo(v3[0] + offset, v3[1] + offset);
     ctx.closePath();
     ctx.strokeStyle = "white";
+    ctx.lineWidth = 1.3;
     ctx.stroke();
 }
 
 // More variables
 // MAX R that fits in the canvas is 250
+var canvas_edge = 900
+var scale = 0.416
 var shapeType = randomWithProbability(["iso", "dodeca", "both"])
 var T_x = 0
 var T_y = 0
-var R = randomWithProbability([150, 250, 250])
-// var R0 = randomWithProbability([20, 40, 100, 166, 225])
-var R0 = randomWithProbability([40])
+// var R = randomWithProbability([150, 250, 250])
+var R = randomWithProbability([0.33 * canvas_edge, scale * canvas_edge, scale * canvas_edge])
+var R0 = randomWithProbability([20, 40, 100, 166, 225])
+// var R0 = randomWithProbability([0.066667 * canvas_edge])
 
 const noStellation = randomWithProbability(Array(20).fill(0).concat([1]))
 const stellation = randomWithProbability([[0, 1], [1, 0], [1, 1]])
@@ -351,16 +355,19 @@ function randomWithProbability(arr) {
     return arr[idx];
 }
 
+const R_Max = canvas_edge * scale
+const R0_Max = canvas_edge * 0.9 * scale
+
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const currentTime = performance.now();
 
     if (!noStellation) {
         if (stellation[0]) {
-            R = 220 * Math.sin(currentTime / speedR + timeOffset[0]) + 30;
+            R = R_Max * Math.sin(currentTime / speedR + timeOffset[0]) + 30;
         }
         if (stellation[1]) {
-            R0 = 200 * Math.sin(currentTime / speedR0 + timeOffset[0]);
+            R0 = R0_Max * Math.sin(currentTime / speedR0 + timeOffset[0]);
         }
     }
 
@@ -382,11 +389,9 @@ function animate() {
 var ctx, canvas;
 window.addEventListener("load", () => {
     canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d");
-    canvas.width = 600;
-    canvas.height = 600;
+    ctx = canvas.getContext("2d", { antialias: false });
+    canvas.width = canvas_edge;
+    canvas.height = canvas_edge;
     requestAnimationFrame(animate);
 });
-
-
 

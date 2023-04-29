@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-    color: #93c196;
+    color: #a4e2a9;
     text-decoration: none;
 }
 
@@ -73,55 +73,38 @@ a:hover {
 }
 
 .github:hover .icon {
-    /* fill: rgb(115, 173, 119) */
-    fill: #93c196;
+    fill: #a4e2a9;
 }
 
 .github:hover .selectable {
-    /* color: rgb(115, 173, 119) */
-    color: #93c196;
+    color: #a4e2a9;
 }
 
 .info:hover .icon {
-    fill: #93c196;
+    fill: #a4e2a9;
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
 .info:hover .mail {
-    filter: invert(38%) sepia(17%) saturate(757%) hue-rotate(74deg) brightness(98%) contrast(91%);
+    filter: invert(6%) sepia(4%) saturate(2802%) hue-rotate(63deg) brightness(95%) contrast(86%);
 }
-
 
 svg {
     fill: white;
 }
 
 .tooltiptext {
-    position: absolute;
-    visibility: hidden;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    opacity: 0;
     background-color: #ffffff;
     color: #6c547e;
-    text-align: left;
     padding: 1.5px;
-    padding-right: 2px;
-    padding-left: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
     border-radius: 3px;
-    margin-top: 22.5px;
-}
-
-.tooltiptext::after {
-    content: " ";
-    position: absolute;
-    bottom: 85%;
-    left: 7.5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent rgb(255, 255, 255) rgb(255, 255, 255);
-}
-
-.info:hover .tooltiptext-info {
-    opacity: 1;
-    visibility: visible;
+    transition: all 0.5s ease;
 }
 
 #canvas {

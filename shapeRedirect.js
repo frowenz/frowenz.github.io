@@ -2,8 +2,15 @@
 const cnvs = document.getElementById('canvas');
 const ctxx = cnvs.getContext('2d');
 
+var centerY = cnvs.height;
+var centerX = cnvs.width;
+
 function getMousePosition(cnvs, event) {
     const rect = cnvs.getBoundingClientRect();
+
+    centerY = rect.height;
+    centerX = rect.width;
+    
     const scaleX = cnvs.width / rect.width;
     const scaleY = cnvs.height / rect.height;
     return {
@@ -12,9 +19,6 @@ function getMousePosition(cnvs, event) {
     };
 }
 
-let centerY = cnvs.height;
-let centerX = cnvs.width;
-let radius = 100;
 
 cnvs.addEventListener('mousemove', (event) => {
     const mouseX = event.pageX - cnvs.offsetLeft;
