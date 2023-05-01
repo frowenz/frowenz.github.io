@@ -305,6 +305,7 @@ function drawFaces() {
     }
 }
 
+var stroke_color = "white"
 function drawFace(v1, v2, v3) {
     let offset = canvas.width / 2
     ctx.beginPath();
@@ -312,8 +313,8 @@ function drawFace(v1, v2, v3) {
     ctx.lineTo(v2[0] + offset, v2[1] + offset);
     ctx.lineTo(v3[0] + offset, v3[1] + offset);
     ctx.closePath();
-    ctx.strokeStyle = "white";
-    ctx.lineWidth = 1.3;
+    ctx.strokeStyle = stroke_color;
+    ctx.lineWidth = 1.4;
     ctx.stroke();
 }
 
@@ -321,39 +322,45 @@ function drawFace(v1, v2, v3) {
 // MAX R that fits in the canvas is 250
 var canvas_edge = 900
 var scale = 0.416
-var shapeType = randomWithProbability(["iso", "dodeca", "both"])
-var T_x = 0
-var T_y = 0
-// var R = randomWithProbability([150, 250, 250])
-var R = randomWithProbability([0.33 * canvas_edge, scale * canvas_edge, scale * canvas_edge])
-var R0 = randomWithProbability([20, 40, 100, 166, 225])
-// var R0 = randomWithProbability([0.066667 * canvas_edge])
 
-const noStellation = randomWithProbability(Array(20).fill(0).concat([1]))
-const stellation = randomWithProbability([[0, 1], [1, 0], [1, 1]])
-const speedR = randomWithProbability([2000, 2000, 3000, 4000, 8000])
-const speedR0 = randomWithProbability([1000, 1500, 4000, 5000, 6000])
 
-const plusMinus = randomWithProbability([-1, 1])
-const plusMinus2 = randomWithProbability([-1, 1])
-const spin = randomWithProbability([
-    [plusMinus * 0.00005, plusMinus2 * 0.0005],
-    [plusMinus * 0.0025, plusMinus2 * 0.001],
-    [plusMinus * 0.001, plusMinus2 * 0.0025],
-    [plusMinus * 0.001, plusMinus2 * 0.005],
-    [plusMinus * 0.005, plusMinus2 * 0.001],
-    [0, plusMinus * 0.005],
-    [plusMinus * 0.005, 0],
-    [plusMinus * 0.005, plusMinus2 * 0.005]]
-)
+var shapeType, T_x, T_y, R, R0, noStellation, stellation, speedR, speedR0;
+var plusMinus, plusMinus2, spin, flipRadii, timeOffset;
+function randomizeShape() {
+    shapeType = randomWithProbability(["iso", "dodeca", "both"]);
+    T_x = 0;
+    T_y = 0;
+    R = randomWithProbability([0.33 * canvas_edge, scale * canvas_edge, scale * canvas_edge]);
+    R0 = randomWithProbability([20, 40, 100, 166, 225]);
 
-const flipRadii = randomWithProbability([0, 1])
-const timeOffset = [(Math.floor(Math.random() * 6.28318530718)), (Math.floor(Math.random() * 10000) + 1)]
+    noStellation = randomWithProbability(Array(20).fill(0).concat([1]));
+    stellation = randomWithProbability([[0, 1], [1, 0], [1, 1]]);
+    speedR = randomWithProbability([2000, 2000, 3000, 4000, 8000]);
+    speedR0 = randomWithProbability([1000, 1500, 4000, 5000, 6000]);
+
+    plusMinus = randomWithProbability([-1, 1]);
+    plusMinus2 = randomWithProbability([-1, 1]);
+    spin = randomWithProbability([
+        [plusMinus * 0.00005, plusMinus2 * 0.0005],
+        [plusMinus * 0.0025, plusMinus2 * 0.001],
+        [plusMinus * 0.001, plusMinus2 * 0.0025],
+        [plusMinus * 0.001, plusMinus2 * 0.005],
+        [plusMinus * 0.005, plusMinus2 * 0.001],
+        [0, plusMinus * 0.005],
+        [plusMinus * 0.005, 0],
+        [plusMinus * 0.005, plusMinus2 * 0.005]
+    ]);
+
+    flipRadii = randomWithProbability([0, 1]);
+    timeOffset = [(Math.floor(Math.random() * 6.28318530718)), (Math.floor(Math.random() * 10000) + 1)];
+}
+
 
 function randomWithProbability(arr) {
     var idx = Math.floor(Math.random() * arr.length);
     return arr[idx];
 }
+randomizeShape()
 
 const R_Max = canvas_edge * scale
 const R0_Max = canvas_edge * 0.9 * scale
@@ -387,6 +394,8 @@ function animate() {
 }
 
 var ctx, canvas;
+var mouse_x = 0;
+var mouse_y = 0;
 window.addEventListener("load", () => {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d", { antialias: false });
@@ -394,4 +403,6 @@ window.addEventListener("load", () => {
     canvas.height = canvas_edge;
     requestAnimationFrame(animate);
 });
+
+
 

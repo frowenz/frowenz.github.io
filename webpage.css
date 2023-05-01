@@ -1,10 +1,23 @@
+:root {
+    /* #6a4b81 */
+    --primary-hue: 274;
+    /* --primary-hue: 230; */
+    --primary-saturation: 26%;
+    --primary-lightness: 40%;
+    --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+
+    --highlight-hue: 125;
+    --highlight-saturation: 52%;
+    --highlight-lightness: 76%;
+    --highlight-color:  hsl(var(--highlight-hue), var(--highlight-saturation), var(--highlight-lightness));
+}
+
 html {
     background-color: white;
 }
 
 body {
-    /* background-color: #67497c; */
-    background-color: #6a4b81;
+    background-color: var(--primary-color);
     font-family: 'Source Code Pro', monospace;
     font-weight: 0;
     color: white;
@@ -29,7 +42,7 @@ a {
 }
 
 a:hover {
-    color: #a4e2a9;
+    color: var(--highlight-color);
     text-decoration: none;
 }
 
@@ -73,15 +86,15 @@ a:hover {
 }
 
 .github:hover .icon {
-    fill: #a4e2a9;
+    fill: var(--highlight-color);
 }
 
 .github:hover .selectable {
-    color: #a4e2a9;
+    color: var(--highlight-color);
 }
 
 .info:hover .icon {
-    fill: #a4e2a9;
+    fill: var(--highlight-color);
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
@@ -99,7 +112,7 @@ svg {
     right: 25px;
     opacity: 0;
     background-color: #ffffff;
-    color: #6c547e;
+    color: var(--primary-color);
     padding: 1.5px;
     padding-right: 5px;
     padding-left: 5px;
@@ -107,7 +120,7 @@ svg {
     transition: all 0.5s ease;
 }
 
-#canvas {
+#canvas-container {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -119,8 +132,35 @@ svg {
     transform: translate(0, calc((100dvh - min((100dvw - 712px), 60dvh)) / 2));
 }
 
+#canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#refreshIcon {
+    position: absolute;
+    width: 22.5px;
+    height: 22.5px;
+    right: 7.5%;
+    bottom: 5px;
+}
+
+#refreshIcon:hover {
+    cursor: pointer;
+}
+
+#refreshIcon path {
+    stroke: hsl(var(--primary-hue), var(--highlight-saturation), var(--highlight-lightness));
+    stroke-width: 20;
+}
+
+#refreshIcon:hover path {
+    stroke: var(--highlight-color);
+}
+
+
 @media (max-width: 1000px) {
-    #canvas {
+    #canvas-container {
         display: none;
     }
 }
