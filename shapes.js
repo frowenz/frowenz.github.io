@@ -331,7 +331,7 @@ function randomizeShape() {
     T_x = 0;
     T_y = 0;
     R = randomWithProbability([0.33 * canvas_edge, scale * canvas_edge, scale * canvas_edge]);
-    R0 = randomWithProbability([20, 40, 100, 166, 225]);
+    R0 = randomWithProbability([40, 100, 166, 225]);
 
     noStellation = randomWithProbability(Array(20).fill(0).concat([1]));
     stellation = randomWithProbability([[0, 1], [1, 0], [1, 1]]);

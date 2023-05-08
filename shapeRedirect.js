@@ -15,11 +15,13 @@ function getMousePosition(cnvs, event) {
 }
 
 document.addEventListener('mousemove', (event) => {
+    var highlightColor = rootStyles.getPropertyValue('--highlight-color').trim();
     const distance = Math.sqrt(Math.pow((getMousePosition(cnvs, event).x - (cnvs.height/2) ), 2) + Math.pow((getMousePosition(cnvs, event).y - (cnvs.height/2)), 2));
     if (distance <= Math.max(Math.abs(R), Math.abs(R0))) {
         cnvs.style.cursor = "pointer";
         mouseOnShape = true;
-        stroke_color = "#a4e2a9"
+        // stroke_color = "#a4e2a9"
+        stroke_color = highlightColor
     }
     else {
         cnvs.style.cursor = "default";

@@ -1,15 +1,18 @@
 :root {
-    /* #6a4b81 */
-    --primary-hue: 274;
-    /* --primary-hue: 230; */
+    /* --highlight-color: #98ff98; */
+    /* --primary-color: #6a4b81; */
+
+    --primary-hue: 271;
     --primary-saturation: 26%;
     --primary-lightness: 40%;
     --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
-
-    --highlight-hue: 125;
-    --highlight-saturation: 52%;
-    --highlight-lightness: 76%;
+    
+    --highlight-hue: 190;
+    --highlight-saturation: 100%;
+    --highlight-lightness: 77%;
     --highlight-color:  hsl(var(--highlight-hue), var(--highlight-saturation), var(--highlight-lightness));
+    /* --highlight-color: #8afbff; */
+    
 }
 
 html {
@@ -99,7 +102,9 @@ a:hover {
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
 .info:hover .mail {
-    filter: invert(6%) sepia(4%) saturate(2802%) hue-rotate(63deg) brightness(95%) contrast(86%);
+    /* filter: invert(6%) sepia(4%) saturate(2802%) hue-rotate(63deg) brightness(95%) contrast(86%); */
+    /* filter: invert(13%) sepia(29%) saturate(699%) hue-rotate(58deg) brightness(107%) contrast(101%); */
+    filter: invert(14%) sepia(17%) saturate(1105%) hue-rotate(149deg) brightness(102%) contrast(106%);
 }
 
 svg {
@@ -150,12 +155,20 @@ svg {
 }
 
 #refreshIcon path {
-    stroke: hsl(var(--primary-hue), var(--highlight-saturation), var(--highlight-lightness));
+    stroke: hsl(var(--primary-hue), var(--primary-saturation), var(--highlight-lightness));
     stroke-width: 20;
 }
 
 #refreshIcon:hover path {
     stroke: var(--highlight-color);
+}
+
+.selected-page { 
+    text-decoration: underline wavy;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 

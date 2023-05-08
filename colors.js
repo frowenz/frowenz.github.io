@@ -6,6 +6,7 @@ const rootStyles = getComputedStyle(root);
 
 // Access the custom properties (colors) from the computed styles
 const primaryColor = rootStyles.getPropertyValue('--primary-color').trim();
+var highlightColor = rootStyles.getPropertyValue('--highlight-color').trim();
 
 // Log the colors
 console.log('Primary color:', primaryColor);
