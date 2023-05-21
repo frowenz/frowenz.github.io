@@ -61,18 +61,23 @@
         let about = document.getElementsByClassName('about')[0];
         let projects = document.getElementsByClassName('projects')[0];
         if (projects.style.display != "none") {
+            about.style.display = "flex";
             projects.style.display = "none";
-            about.style.display = "block";
-            swapWavyUnderline()
+
+            document.getElementById('view-about').innerHTML = "About <"
+            document.getElementById('view-projects').innerHTML = "Projects &nbsp;";
         }
     }
+
     function viewProjects() {
         let about = document.getElementsByClassName('about')[0];
         let projects = document.getElementsByClassName('projects')[0];
         if (about.style.display != "none") {
             about.style.display = "none";
-            projects.style.display = "block";
-            swapWavyUnderline()
+            projects.style.display = "flex";
+
+            document.getElementById('view-about').innerHTML = "About"
+            document.getElementById('view-projects').innerHTML = "Projects <";
         }
     }
 
@@ -84,36 +89,26 @@
             about.classList.add('selected-page');
         } else {
             project.classList.add('selected-page');
+            project.classList.add('selected-page');
             about.classList.remove('selected-page');
         }
-
-        let slash = document.getElementById('/');
-        slash.innerHTML = (slash.innerHTML == '\\') ? '/' : '\\';
     }
 </script>
 <script src="shapes.js"></script>
 
 <body>
     <div id="text-container">
+        <span style="font-weight: 1000; font-size: 18px"> Owen Fahey&nbsp;</span>
 
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-weight: 1000; font-size: 16px"> Owen Fahey </span>
-            <!-- <span style="float: right;" cursor>
-                <span id="view-about" class="selected-page clickable" onclick="viewAbout()"> About</span>
-                <span id="/"> / </span>
-                <span id="view-projects" class="clickable" onclick="viewProjects()"> Projects</span>
-            </span> -->
-        </div>
         <br>
 
         <div class="flex-container about">
             <span>
                 Welcome to my site! I am an undergraduate at the University of Chicago ('24) pursuing
                 degrees in Computer Science and Philosophy.<br><br>I work as a software developer at the
-                <a href="http://salavon.com/"> Jason Salavon Studio</a> where we are building a massive animated art
-                piece with Stable Diffusion.
-                <!-- Check out our latest piece here: <a href="coming soon">here</a> -->
-                <br><br>
+                <a href="http://salavon.com/"> Jason Salavon Studio</a> where we are about to release <a
+                    href="https://www.latentculture.com/todem/">TODEM</a>, a massive animated art piece.
+                <!-- <br><br> -->
                 Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
                 synthetic data generator. Check out <a
                     href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet">this dataset</a> of
@@ -149,13 +144,25 @@
                 </div>
 
             </div>
+
             <span> Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
-                    href="https://lucasgelfond.online/">Lucas Gelfond</a> for inspiration.
+                    href="https://lucasgelfond.online/">Lucas Gelfond</a> for site inspiration.
             </span>
+
+
+
+        </div>
+        <div class="flex-container projects" style="display:none;">
+
+            <!-- <div class="project-item">
+                <div class="project-text">
+                </div>
+                <video class="project_image" src="projects photo/clip.mp4" loop autoplay muted>
+                </video>
+            </div> -->
+
         </div>
     </div>
-    <div class="flex-container projects" style="display:none;">
-        <!-- Add your project details here -->
     </div>
     <span class="tooltiptext">Copied</span>
     <div id="canvas-container">

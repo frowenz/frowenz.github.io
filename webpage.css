@@ -171,6 +171,19 @@ svg {
     cursor: pointer;
 }
 
+.project_image {
+    /* float: right; */
+    width: 50%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.info-line {
+    background-color: #ffffff;
+    flex-grow: 1;
+    height: 0.5px;
+}
+
 
 @media (max-width: 1000px) {
     #canvas-container {
