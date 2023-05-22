@@ -6,13 +6,13 @@
     --primary-saturation: 26%;
     --primary-lightness: 40%;
     --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
-    
+
     --highlight-hue: 190;
     --highlight-saturation: 100%;
     --highlight-lightness: 77%;
-    --highlight-color:  hsl(var(--highlight-hue), var(--highlight-saturation), var(--highlight-lightness));
+    --highlight-color: hsl(var(--highlight-hue), var(--highlight-saturation), var(--highlight-lightness));
     /* --highlight-color: #8afbff; */
-    
+
 }
 
 html {
@@ -163,12 +163,16 @@ svg {
     stroke: var(--highlight-color);
 }
 
-.selected-page { 
-    text-decoration: underline wavy;
+.selected-page:hover {
+    font-style: unset !important;
 }
 
 .clickable {
     cursor: pointer;
+}
+
+.clickable:hover {
+    font-style: italic;
 }
 
 .project_image {
@@ -182,8 +186,40 @@ svg {
     background-color: #ffffff;
     flex-grow: 1;
     height: 0.5px;
+    animation: pulse 2s infinite ease-in-out;
 }
 
+
+@keyframes pulse {
+  0% {
+    flex-grow: 0;
+  }
+  50% {
+    flex-grow: 1;
+  }
+  100% {
+    flex-grow: 0;
+    right: 0px;
+  }
+}
+#divider {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    border-left: solid 0.5px;
+    border-right: solid 0.5px;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative; /* Add this */
+    overflow: hidden; /* Hide the overflowing part of the SVGs */
+}
+
+#divider svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 @media (max-width: 1000px) {
     #canvas-container {
@@ -206,4 +242,19 @@ svg {
         padding: 25px;
         padding-right: 0px;
     }
+
+    #divider {
+        display: none;
+    }
+
+    .nav {
+        transform: translate(calc(22.25dvw - 25px), 0);
+    }
+
+    .tooltiptext {
+        right: 25px;
+        bottom: 25px;
+        top: unset;
+    }
+    
 }

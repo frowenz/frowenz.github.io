@@ -64,9 +64,9 @@
         if (projects.style.display != "none") {
             about.style.display = "flex";
             projects.style.display = "none";
-
-            document.getElementById('view-about').innerHTML = "About <"
-            document.getElementById('view-projects').innerHTML = "Projects &nbsp;";
+            document.getElementById('view-about').innerHTML = "> About"
+            document.getElementById('view-projects').innerHTML = "&nbsp; Projects";
+            swapSelected()
         }
     }
 
@@ -76,20 +76,19 @@
         if (about.style.display != "none") {
             about.style.display = "none";
             projects.style.display = "flex";
-
-            document.getElementById('view-about').innerHTML = "About"
-            document.getElementById('view-projects').innerHTML = "Projects <";
+            document.getElementById('view-about').innerHTML = "&nbsp; About"
+            document.getElementById('view-projects').innerHTML = "> Projects";
+            swapSelected()
         }
     }
 
-    function swapWavyUnderline() {
+    function swapSelected() {
         let project = document.getElementById('view-projects');
         let about = document.getElementById('view-about');
         if (project.classList.contains('selected-page')) {
             project.classList.remove('selected-page');
             about.classList.add('selected-page');
         } else {
-            project.classList.add('selected-page');
             project.classList.add('selected-page');
             about.classList.remove('selected-page');
         }
@@ -98,16 +97,49 @@
 <script src="shapes.js"></script>
 
 <body>
+    <div id="topbar" style="width: 100%"></div>
     <div id="text-container">
-        <span style="font-weight: 1000; font-size: 18px"> Owen Fahey&nbsp;</span>
+        <span style="display: flex; flex-direction: columns; align-items: center; justify-content: space-between;">
+            <span style="font-weight: 1000;  font-size: 18px"> Owen Fahey&nbsp;</span>
 
+            <div id="divider">
+
+                <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 37.5px; width: 100%;">
+                    <path id="wave"
+                        d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
+                        fill="none" stroke="white" stroke-width="1">
+                        <animateTransform attributeName="transform" type="translate" from="-100 0" to="0 0" dur="2s"
+                            repeatCount="indefinite" />
+                    </path>
+                </svg>
+
+                <svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 37.5px; width: 100%;">
+                    <path id="wave"
+                        d="M -50 10 Q -37.5 15 -25 10 Q -12.5 5 0 10 Q 12.5 15 25 10 Q 37.5 5 50 10 Q 62.5 15 75 10 Q 87.5 5 100 10 Q 112.5 15 125 10 Q 137.5 5 150 10 Q 162.5 15 175 10 Q 187.5 5 200 10 Q 212.5 15 225 10 Q 237.5 5 250 10"
+                        fill="none" stroke="white" stroke-width="0.5">
+                        <animateTransform attributeName="transform" type="translate" from="0 0" to="-50 0" dur="3s"
+                            repeatCount="indefinite" />
+                    </path>
+                </svg>
+
+
+            </div>
+
+            <div class="nav" style="width: fit-content; display: flex; flex-direction: column; ">
+                <span id="view-about" class="clickable selected-page" onclick="viewAbout()">> About </span>
+                <span id="view-projects" class="clickable" onclick="viewProjects()"> &nbsp; Projects </span>
+            </div>
+
+        </span>
         <br>
 
         <div class="flex-container about">
             <span>
                 Welcome to my site! I am an undergraduate at the University of Chicago ('24) pursuing
                 degrees in Computer Science and Philosophy.<br><br>I work as a software developer at the
-                <a href="http://salavon.com/"> Jason Salavon Studio</a> where we are about to release <a
+                <a href="http://salavon.com/"> Jason Salavon Studio</a> where we just soft launched <a
                     href="https://www.latentculture.com/todem/">TODEM</a>, a massive animated art piece.
                 <!-- <br><br> -->
                 Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
@@ -153,14 +185,28 @@
 
 
         </div>
-        <div class="flex-container projects" style="display:none;">
+        <div class="flex-container projects" style="display:none">
 
-            <!-- <div class="project-item">
-                <div class="project-text">
-                </div>
-                <video class="project_image" src="projects photo/clip.mp4" loop autoplay muted>
-                </video>
-            </div> -->
+            UNFINISHED SECTION. LINKS, IMAGES, DESCRIPTIONS & MORE PROJECTS COMING SOON!
+            <br>
+            <br>
+
+            <span>
+                <a href="https://frowenz.github.io/circles-and-lines/"> Circles and Lines</a>
+                <br>
+                <br>
+                <a href="https://github.com/frowenz/album-collage-generator/"> Album Collage Generator</a>
+                <br>
+                <br>
+                <a href="https://frowenz.github.io/ray-marching/"> Ray Marching Visualized</a>
+                <br>
+                <br>
+                State Political Lean Visualization
+                <br>
+                <br>
+                Last.FM Overlap Analyzer
+
+            </span>
 
         </div>
     </div>
