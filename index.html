@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="V6h8dNM17z0XkempuozG7ydHttiIymmaccEvR51BtSg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport"
-        content=" width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 
     <title>Owen Fahey</title>
 
@@ -28,78 +28,15 @@
     <!-- Styling -->
     <link rel="stylesheet" href="webpage.css" />
 
+    <script src="colors.js"></script>
+    <script src="miscFunctions.js"></script>
+    <script src="shapes.js"></script>
 </head>
-<script src="colors.js"></script>
-<script>
-    var timeOutId;
-    function copyEmailToClipboard() {
-        const encodedString = '&#111;&#119;&#101;&#110;&#102;&#097;&#104;&#101;&#121;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;'
-        const div = document.createElement("div");
-        div.innerHTML = encodedString;
-        const decodedString = div.innerText;
-        navigator.clipboard.writeText(decodedString);
-        let tooltip = document.getElementsByClassName('tooltiptext')[0];
-        tooltip.innerHTML = "Copied!"
-        tooltip.style.opacity = 1
-        if (timeOutId) {
-            clearTimeout(timeOutId);
-        }
-        setTimeout(() => { tooltip.style.opacity = 0 }, 1000);
-    }
-
-    function redirectToGithub() {
-        window.location.href = "https://github.com/frowenz";
-    }
-
-    var mouseOnShape = false;
-    function redirectToDesmos() {
-        if (mouseOnShape) {
-            window.open("https://www.desmos.com/calculator/i0kvdiwgqu")
-        }
-    }
-
-    function viewAbout() {
-        let about = document.getElementsByClassName('about')[0];
-        let projects = document.getElementsByClassName('projects')[0];
-        if (projects.style.display != "none") {
-            about.style.display = "flex";
-            projects.style.display = "none";
-            document.getElementById('view-about').innerHTML = "> About"
-            document.getElementById('view-projects').innerHTML = "&nbsp; Projects";
-            swapSelected()
-        }
-    }
-
-    function viewProjects() {
-        let about = document.getElementsByClassName('about')[0];
-        let projects = document.getElementsByClassName('projects')[0];
-        if (about.style.display != "none") {
-            about.style.display = "none";
-            projects.style.display = "flex";
-            document.getElementById('view-about').innerHTML = "&nbsp; About"
-            document.getElementById('view-projects').innerHTML = "> Projects";
-            swapSelected()
-        }
-    }
-
-    function swapSelected() {
-        let project = document.getElementById('view-projects');
-        let about = document.getElementById('view-about');
-        if (project.classList.contains('selected-page')) {
-            project.classList.remove('selected-page');
-            about.classList.add('selected-page');
-        } else {
-            project.classList.add('selected-page');
-            about.classList.remove('selected-page');
-        }
-    }
-</script>
-<script src="shapes.js"></script>
 
 <body>
-    <div id="topbar" style="width: 100%"></div>
     <div id="text-container">
-        <span style="display: flex; flex-direction: columns; align-items: center; justify-content: space-between;">
+        <span style="display: flex; flex-direction: columns; align-items: center; justify-content: space-between;
+        margin-bottom: 20px;">
             <span style="font-weight: 1000;  font-size: 18px"> Owen Fahey&nbsp;</span>
 
             <div id="divider">
@@ -124,7 +61,6 @@
                     </path>
                 </svg>
 
-
             </div>
 
             <div class="nav" style="width: fit-content; display: flex; flex-direction: column; ">
@@ -133,19 +69,27 @@
             </div>
 
         </span>
-        <br>
 
         <div class="flex-container about">
             <span>
                 Welcome to my site! I am an undergraduate at the University of Chicago ('24) pursuing
-                degrees in Computer Science and Philosophy.<br><br>I work as a software developer at the
+                degrees in Computer Science and Philosophy.
+                <br><br>
+                I work
+
+                <!-- as a research assistant for <a href="http://people.cs.uchicago.edu/~glk/">Prof.
+                    Gordon Kindlmann</a> on
+                <a href="https://people.cs.uchicago.edu/~glk/pubs/pdf/Kindlmann-FaceBasedLuminanceMatching-VIS-2002">
+                    luminance matching</a> and -->
+
+                as a software developer at the
                 <a href="http://salavon.com/"> Jason Salavon Studio</a> where we just soft launched <a
                     href="https://www.latentculture.com/todem/">TODEM</a>, a massive animated art piece.
+
                 <!-- <br><br> -->
+
                 Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
-                synthetic data generator. Check out <a
-                    href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet">this dataset</a> of
-                ASL images I created.
+                synthetic data generator.
                 <br>
                 <br>
                 I am looking for back-end and full-stack roles on highly collaborative teams working on
@@ -154,8 +98,8 @@
 
             <div class="unselectable" style="margin-bottom: auto;">
                 <br>
-                <div onclick="redirectToGithub()" style="cursor: pointer; display:flex; max-width: fit-content;"
-                    class="github">
+                <div onclick="redirectToGithub()" style="display:flex; max-width: fit-content;"
+                    class="github clickable">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512" width="15" height="15"
                         draggable="false">
                         <path
@@ -181,32 +125,99 @@
             <span> Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
                     href="https://lucasgelfond.online/">Lucas Gelfond</a> for site inspiration.
             </span>
-
-
-
         </div>
         <div class="flex-container projects" style="display:none">
 
-            UNFINISHED SECTION. LINKS, IMAGES, DESCRIPTIONS & MORE PROJECTS COMING SOON!
-            <br>
-            <br>
+            <div class="project-item">
+                <div class="text">
+                    <h6>
+                        <a href="https://frowenz.github.io/elections-visualization/"> Election Trends Visualization </a>
+                    </h6>
+                    <span>
+                        Visualizing presidential election results and state political lean over time. Built with D3.js.
+                    </span>
+                </div>
+                <div class="image-container clickable">
+                    <video src="projects photo/map.mov" autoplay muted loop></video>
+                </div>
+            </div>
 
-            <span>
-                <a href="https://frowenz.github.io/circles-and-lines/"> Circles and Lines</a>
-                <br>
-                <br>
-                <a href="https://github.com/frowenz/album-collage-generator/"> Album Collage Generator</a>
-                <br>
-                <br>
-                <a href="https://frowenz.github.io/ray-marching/"> Ray Marching Visualized</a>
-                <br>
-                <br>
-                State Political Lean Visualization
-                <br>
-                <br>
-                Last.FM Overlap Analyzer
 
-            </span>
+            <div class="project-item">
+                <div class="text">
+                    <h6><a href="https://frowenz.github.io/circles-and-lines/"> Circles and Lines</a></h6>
+                    <span> Generative art piece built using animated SVGs.
+                    </span>
+                </div>
+                <div class="image-container clickable">
+                    <!-- <img src="projects photo/circles_and_lines.jpeg"> -->
+                    <video src="projects photo/circles_and_lines.mp4" autoplay muted loop></video>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="text">
+                    <h6><a href="https://github.com/frowenz/album-collage-generator/"> Album Collage Generator </a></h6>
+                    <span>
+                        Tools to download album covers en masse and arrange them by hue,
+                        saturation, and brightness into collages. Written in Python.
+                    </span>
+                </div>
+                <div class="image-container clickable">
+                    <img src="projects photo/saturation_then_brightness.jpg">
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="text">
+                    <h6>
+                        <a href="https://frowenz.github.io/ray-marching/"> Ray Marching Demo </a>
+                    </h6>
+                    <span>
+                        A 2D demo of how ray marching with signed distance functions works. Written in Javascript.
+                    </span>
+                </div>
+                <div class="image-container clickable">
+                    <video src="projects photo/raymarching.mp4" autoplay muted loop></video>
+                </div>
+            </div>
+
+
+            <div class="project-item">
+                <div class="text">
+                    <h6>
+                        <a href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet"> Synthetic ASL Dataset
+                        </a>
+                    </h6>
+                    <span>
+                        I created this dataset while at LexSet and am now using it for a paper assesing how
+                        synthetic image data enhances classification performance.
+                    </span>
+                </div>
+                <div class="image-container clickable">
+                    <img src="projects photo/asl_collage.jpg">
+                </div>
+            </div>
+
+
+            <div class="project-item">
+                <div class="text">
+                    <h6>
+                        <a href="https://frowenz.github.io/florence-nightingale-vis/"> Florence Nightingale Data
+                            Visualization </a>
+                        </a>
+                    </h6>
+                    <span>
+                        I remade <a
+                            href="https://en.wikipedia.org/wiki/Florence_Nightingale#/media/File:Nightingale-mortality.jpg">this</a>
+                        famous data visualization by Florence Nightingale using D3.js. I also made a bar chart version.
+                    </span>
+                </div>
+                <div class="image-container clickable">
+                    <img src="projects photo/nightingale.png">
+                </div>
+            </div>
+
 
         </div>
     </div>

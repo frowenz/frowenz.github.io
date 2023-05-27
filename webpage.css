@@ -27,21 +27,29 @@ body {
     width: 100dvw;
     height: 100dvh;
     font-size: 12.5px;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-    scroll-behavior: smooth;
+
+    overflow: overlay
 }
 
-::-webkit-scrollbar {
-    display: none !important;
-    width: 0 !important;
-    background: transparent !important;
+*::-webkit-scrollbar {
+    background-color: transparent;
 }
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-clip: content-box;
+}
+
 
 a {
     color: white;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 a:hover {
@@ -57,6 +65,7 @@ a:hover {
     width: 725px;
     height: 100%;
     flex-direction: column;
+    /* overflow: overlay; */
 }
 
 .icon {
@@ -72,6 +81,9 @@ a:hover {
     scrollbar-width: none;
     width: 100%;
     height: 100%;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
 }
 
 .unselectable {
@@ -163,9 +175,6 @@ svg {
     stroke: var(--highlight-color);
 }
 
-.selected-page:hover {
-    font-style: unset !important;
-}
 
 .clickable {
     cursor: pointer;
@@ -175,33 +184,10 @@ svg {
     font-style: italic;
 }
 
-.project_image {
-    /* float: right; */
-    width: 50%;
-    height: auto;
-    margin-bottom: 25px;
+.selected-page:hover {
+    font-style: unset !important;
 }
 
-.info-line {
-    background-color: #ffffff;
-    flex-grow: 1;
-    height: 0.5px;
-    animation: pulse 2s infinite ease-in-out;
-}
-
-
-@keyframes pulse {
-  0% {
-    flex-grow: 0;
-  }
-  50% {
-    flex-grow: 1;
-  }
-  100% {
-    flex-grow: 0;
-    right: 0px;
-  }
-}
 #divider {
     display: flex;
     flex-grow: 1;
@@ -211,14 +197,71 @@ svg {
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
-    position: relative; /* Add this */
-    overflow: hidden; /* Hide the overflowing part of the SVGs */
+    position: relative;
+    /* Add this */
+    overflow: hidden;
+    /* Hide the overflowing part of the SVGs */
 }
 
 #divider svg {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px;
+    margin-top: 10px */
+}
+
+.project-item .text {
+    flex: 1 1 62.5%;
+    margin: auto;
+}
+
+.project-item .text span {
+    display: block;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-item .text h6 {
+    font-size: 0.85rem;
+}
+
+.project-item {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row-reverse;
+    width: 90%;
+    /* margin-left: 2.5%; */
+}
+
+.project-item .image-container {
+    flex: 0 1 37.5%;
+    display: flex;
+    /* padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px; */
+    box-sizing: border-box;
+    justify-content: right;
+}
+
+.project-item img, video {
+    height: 155px;
+    width: 155px;
+    object-fit: cover;
+    margin-right: 20px;
+    /* margin: auto;
+    margin-left: auto;
+    margin-right: auto; */
+    /* max-width: 100%; */
+    /* max-height: calc(min(100%, 175px)); */
+    /* object-fit: contain;  /* This will scale the image to fit its container while maintaining its aspect ratio */
 }
 
 @media (max-width: 1000px) {
@@ -256,5 +299,27 @@ svg {
         bottom: 25px;
         top: unset;
     }
-    
+
+    .project-item {
+        display: block;
+        margin-bottom: 20px;
+        /* flex-direction: column; */
+    }
+
+    .project-item .image-container {
+        /* padding-left: 15px;
+        padding-right: 15px; */
+
+        /* justify-content: center; */
+
+        padding-left: 10px;
+        justify-content: left;
+    }
+
+    .project-item img, video {
+        margin: unset;
+        height: unset;
+        width: 250px;
+        object-fit: contain;
+    }
 }
