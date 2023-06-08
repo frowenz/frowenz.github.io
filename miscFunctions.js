@@ -21,7 +21,7 @@ function redirectToGithub() {
 var mouseOnShape = false;
 function redirectToDesmos() {
     if (mouseOnShape) {
-        window.open("https://www.desmos.com/calculator/i0kvdiwgqu")
+        window.open("https://www.desmos.com/calculator/fxpx9coioo")
     }
 }
 
