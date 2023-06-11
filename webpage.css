@@ -2,7 +2,7 @@
     /* --highlight-color: #98ff98; */
     /* --primary-color: #6a4b81; */
 
-    --primary-hue: 271;
+    --primary-hue: 268;
     --primary-saturation: 26%;
     --primary-lightness: 40%;
     --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));

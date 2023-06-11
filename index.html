@@ -254,6 +254,10 @@
         </div>
         <canvas id="canvas" onclick=redirectToDesmos()></canvas>
     </div>
+    <!-- workaround for italics not taking a second to load -->
+    <div style="opacity: 0; font-size: 0; position: absolute; font-style: italic;"> 
+        <span class="clickable">Hidden text</span>
+    </div>
     <script src="shapeRedirect.js"></script>
     <script src="scrollHandler.js"></script>
 </body>
