@@ -37,21 +37,34 @@
     <div id="text-container">
         <span style="display: flex; flex-direction: columns; align-items: center; justify-content: space-between;
         margin-bottom: 20px;">
-            <span style="font-weight: 1000;  font-size: 18px"> Owen Fahey&nbsp;</span>
+            <span style="font-weight: 1000;  font-size: 18px"> Owen Fahey</span>
 
             <div id="divider">
+
+                <!-- <span class="line"></span> -->
+
+                <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path id="wave"
+                        d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
+                        fill="none" stroke="white" stroke-width="1">
+                        <animateTransform attributeName="transform" type="translate" from="-100 0" to="0 0" dur="5s"
+                            repeatCount="indefinite" />
+                    </path>
+                </svg>
 
                 <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 37.5px; width: 100%;">
                     <path id="wave"
                         d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
                         fill="none" stroke="white" stroke-width="1">
-                        <animateTransform attributeName="transform" type="translate" from="-100 0" to="0 0" dur="2s"
+                        <animateTransform attributeName="transform" type="translate" from="0 0" to="-100 -0" dur="10s"
                             repeatCount="indefinite" />
                     </path>
                 </svg>
 
-                <svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+
+                <!-- <svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 37.5px; width: 100%;">
                     <path id="wave"
                         d="M -50 10 Q -37.5 15 -25 10 Q -12.5 5 0 10 Q 12.5 15 25 10 Q 37.5 5 50 10 Q 62.5 15 75 10 Q 87.5 5 100 10 Q 112.5 15 125 10 Q 137.5 5 150 10 Q 162.5 15 175 10 Q 187.5 5 200 10 Q 212.5 15 225 10 Q 237.5 5 250 10"
@@ -59,11 +72,11 @@
                         <animateTransform attributeName="transform" type="translate" from="0 0" to="-50 0" dur="3s"
                             repeatCount="indefinite" />
                     </path>
-                </svg>
+                </svg> -->
 
             </div>
 
-            <div class="nav" style="width: fit-content; display: flex; flex-direction: column; ">
+            <div class="nav" style="width: fit-content; flex-direction: column; ">
                 <span id="view-about" class="clickable selected-page" onclick="viewAbout()">> About </span>
                 <span id="view-projects" class="clickable" onclick="viewProjects()"> &nbsp; Projects </span>
             </div>
@@ -75,19 +88,17 @@
                 Welcome to my site! I am an undergraduate at the University of Chicago ('24) pursuing
                 degrees in Computer Science and Philosophy.
                 <br><br>
-                I work
-
-                <!-- as a research assistant for <a href="http://people.cs.uchicago.edu/~glk/">Prof.
-                    Gordon Kindlmann</a> on
-                <a href="https://people.cs.uchicago.edu/~glk/pubs/pdf/Kindlmann-FaceBasedLuminanceMatching-VIS-2002">
-                    luminance matching</a> and -->
-
-                as a software developer at the
+                Currently, I work as
+                a software developer at the
                 <a href="http://salavon.com/"> Jason Salavon Studio</a> where we just soft launched <a
                     href="https://www.latentculture.com/todem/">TODEM</a>, a massive animated art piece.
+                I am also a research assistant for
+                <a href="http://people.cs.uchicago.edu/~glk/">Prof. Gordon Kindlmann</a> continuing his work on
+                <a href="https://people.cs.uchicago.edu/~glk/pubs/pdf/Kindlmann-FaceBasedLuminanceMatching-VIS-2002">
+                    luminance matching.</a>
 
-                <!-- <br><br> -->
-
+                <br>
+                <br>
                 Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
                 synthetic data generator.
                 <br>
@@ -143,7 +154,6 @@
                     </a>
                 </div>
             </div>
-
 
             <div class="project-item">
                 <div class="text">
@@ -213,8 +223,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="project-item">
                 <div class="text">
                     <h6>
@@ -255,9 +263,9 @@
         <canvas id="canvas" onclick=redirectToDesmos()></canvas>
     </div>
     <!-- workaround for italics not taking a second to load -->
-    <div style="opacity: 0; font-size: 0; position: absolute; font-style: italic;"> 
+    <div style="opacity: 0; font-size: 0; position: absolute; font-style: italic;">
         <span class="clickable">Hidden text</span>
     </div>
     <script src="shapeRedirect.js"></script>
-    <script src="scrollHandler.js"></script>
+    <!-- <script src="scrollHandler.js"></script> -->
 </body>
