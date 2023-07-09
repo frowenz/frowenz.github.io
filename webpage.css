@@ -422,7 +422,7 @@ a:hover {
     /* Still deciding whether to include this */
     #nav {
         transform: translate(calc(22.25dvw - 25px), 0);
-        /* display: none; */
+        display: none;
     }
 
     #text-container {
