@@ -1,3 +1,5 @@
+// This was an experiment where I randomized the hue of the website
+
 // Get the root element (HTML)
 const root = document.documentElement;
 
@@ -7,9 +9,6 @@ const rootStyles = getComputedStyle(root);
 // Access the custom properties (colors) from the computed styles
 const primaryColor = rootStyles.getPropertyValue('--primary-color').trim();
 var highlightColor = rootStyles.getPropertyValue('--highlight-color').trim();
-
-// Log the colors
-console.log('Primary color:', primaryColor);
 
 function randomHue() {
     // Generate a random hue between 0 and 359

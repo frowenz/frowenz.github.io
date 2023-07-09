@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="V6h8dNM17z0XkempuozG7ydHttiIymmaccEvR51BtSg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
     <title>Owen Fahey</title>
 
     <!-- Base Styling -->
@@ -17,69 +16,70 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;1,300&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,200&display=swap"
-        rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;1,300&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,200&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;1,300&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,200&display=swap"
+            rel="stylesheet">
+    </noscript>
 
     <!-- Site Icon -->
-    <link rel="icon" type="image/png" href="src/icon.png" />
+    <link rel="icon" type="image/png" href="icons/icon.png" />
 
     <!-- Styling -->
     <link rel="stylesheet" href="webpage.css" />
 
-    <script src="colors.js"></script>
-    <script src="miscFunctions.js"></script>
-    <script src="shapes.js"></script>
+    <!-- Scripts -->
+    <script src="scripts/colors.js"></script>
+    <script src="scripts/site_interactivity.js"></script>
+    <script src="scripts/shapes.js"></script>
 </head>
 
 <body>
     <div id="text-container">
-        <span style="display: flex; flex-direction: columns; align-items: center; justify-content: space-between;
-        margin-bottom: 20px;">
-            <span style="font-weight: 1000;  font-size: 18px"> Owen Fahey</span>
+        <span id="header">
 
-            <div id="divider">
+            <span id="my-name"> Owen Fahey</span>
 
-                <!-- <span class="line"></span> -->
+            <div id="dividing-box">
 
-                <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path id="wave"
-                        d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
-                        fill="none" stroke="white" stroke-width="1">
-                        <animateTransform attributeName="transform" type="translate" from="-100 0" to="0 0" dur="5s"
-                            repeatCount="indefinite" />
-                    </path>
-                </svg>
+                <!-- <div class="line"></div>  -->
 
-                <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 37.5px; width: 100%;">
-                    <path id="wave"
-                        d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
-                        fill="none" stroke="white" stroke-width="1">
-                        <animateTransform attributeName="transform" type="translate" from="0 0" to="-100 -0" dur="10s"
-                            repeatCount="indefinite" />
-                    </path>
-                </svg>
+                    <!-- Sin Wave SVGS -->
+                    <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="wave"
+                            d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
+                            fill="none" stroke="white" stroke-width="1">
+                            <animateTransform id="sinwave5" attributeName="transform" type="translate" from="-100 0"
+                                to="0 0" dur="5s" repeatCount="indefinite" />
+                        </path>
+                    </svg>
 
+                    <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="wave"
+                            d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
+                            fill="none" stroke="white" stroke-width="1">
+                            <animateTransform attributeName="transform" type="translate" from="0 0" to="-100 -0"
+                                dur="10s" repeatCount="indefinite" />
+                        </path>
+                    </svg>
 
-                <!-- <svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 37.5px; width: 100%;">
-                    <path id="wave"
-                        d="M -50 10 Q -37.5 15 -25 10 Q -12.5 5 0 10 Q 12.5 15 25 10 Q 37.5 5 50 10 Q 62.5 15 75 10 Q 87.5 5 100 10 Q 112.5 15 125 10 Q 137.5 5 150 10 Q 162.5 15 175 10 Q 187.5 5 200 10 Q 212.5 15 225 10 Q 237.5 5 250 10"
-                        fill="none" stroke="white" stroke-width="0.5">
-                        <animateTransform attributeName="transform" type="translate" from="0 0" to="-50 0" dur="3s"
-                            repeatCount="indefinite" />
-                    </path>
-                </svg> -->
+                </div>
 
-            </div>
-
-            <div class="nav" style="width: fit-content; flex-direction: column; ">
-                <span id="view-about" class="clickable selected-page" onclick="viewAbout()">> About </span>
-                <span id="view-projects" class="clickable" onclick="viewProjects()"> &nbsp; Projects </span>
-            </div>
+                <div id="nav">
+                    <span id="selector-arrow"> > </span>
+                    <span id="view-about" class="nav-options unselectable selected-page" onclick="viewAbout()">About
+                    </span>
+                    <span id="view-projects" class="nav-options unselectable" onclick="viewProjects()">Projects </span>
+                </div>
 
         </span>
 
@@ -88,29 +88,29 @@
                 Welcome to my site! I am an undergraduate at the University of Chicago ('24) pursuing
                 degrees in Computer Science and Philosophy.
                 <br><br>
-                Currently, I work as
-                a software developer at the
-                <a href="http://salavon.com/"> Jason Salavon Studio</a> where we just soft launched <a
-                    href="https://www.latentculture.com/todem/">TODEM</a>, a massive animated art piece.
+                Currently, I work as a software developer at the
+                <a href="http://salavon.com/" target="_blank"> Jason Salavon Studio</a> where we just launched <a
+                    href="https://www.latentculture.com/todem/?ae=1" target="_blank">TODEM</a>, a massive animated art
+                piece.
                 I am also a research assistant for
-                <a href="http://people.cs.uchicago.edu/~glk/">Prof. Gordon Kindlmann</a> continuing his work on
-                <a href="https://people.cs.uchicago.edu/~glk/pubs/pdf/Kindlmann-FaceBasedLuminanceMatching-VIS-2002">
+                <a href="http://people.cs.uchicago.edu/~glk/" target="_blank">Prof. Gordon Kindlmann</a> continuing his
+                work on
+                <a href="https://people.cs.uchicago.edu/~glk/pubs/pdf/Kindlmann-FaceBasedLuminanceMatching-VIS-2002"
+                    target="_blank">
                     luminance matching.</a>
-
                 <br>
                 <br>
-                Previously, I built backend tools for <a href="https://lexset.ai"> Lexset.ai</a>'s
-                synthetic data generator.
+                Previously, I worked on <a href="https://lexset.ai" target="_blank"> Lexset.ai</a>'s procedural 3D scene
+                generator.
                 <br>
                 <br>
-                I am looking for back-end and full-stack roles on highly collaborative teams working on
-                hard, interesting problems.
+                I am looking for software engineering roles on highly collaborative teams working on hard, interesting
+                problems.
             </span>
 
-            <div class="unselectable" style="margin-bottom: auto;">
+            <div class="unselectable">
                 <br>
-                <div onclick="redirectToGithub()" style="display:flex; max-width: fit-content;"
-                    class="github clickable">
+                <div onclick="redirectToGithub()" class="github clickable">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512" width="15" height="15"
                         draggable="false">
                         <path
@@ -119,153 +119,214 @@
                     <span class="selectable">&nbsp;frowenz </span>
                 </div>
 
-                <div style="cursor: copy; display: flex; max-width: fit-content;" class="info"
-                    onclick=copyEmailToClipboard()>
+                <div class="email" onclick=copyEmailToClipboard()>
+
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="15" height="15" draggable="false"
                         viewBox="0 0 512 512">
                         <path
                             d="M424 80H88a56.06 56.06 0 00-56 56v240a56.06 56.06 0 0056 56h336a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zm-14.18 92.63l-144 112a16 16 0 01-19.64 0l-144-112a16 16 0 1119.64-25.26L256 251.73l134.18-104.36a16 16 0 0119.64 25.26z" />
                     </svg>
+
                     <span>&nbsp;</span>
-                    <img style="margin-top: auto; margin-bottom: auto" src="src/email.png" height="15" draggable="false"
-                        class="mail">
+                    <img src="icons/email.png" height="15" draggable="false" class="mail-image">
                 </div>
 
             </div>
 
-            <span> Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
+            <!-- <span>
+                <br>
+                Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
                     href="https://lucasgelfond.online/">Lucas Gelfond</a> for site inspiration.
-            </span>
+            </span> -->
+
         </div>
         <div class="flex-container projects" style="display:none">
-
+            <!-- TO DO : Turn These Into Components of Some Sort -->
             <div class="project-item">
                 <div class="text">
-                    <h6>
-                        <a href="https://frowenz.github.io/elections-visualization/"> Election Trends Visualization </a>
-                    </h6>
-                    <span>
-                        Visualizing presidential election results and state political lean over time. Built with D3.js.
-                    </span>
-                </div>
-                <div class="image-container clickable">
-                    <a href="https://frowenz.github.io/elections-visualization/">
-                        <video src="projects photo/map.mp4" autoplay muted loop></video>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="text">
-                    <h6><a href="https://frowenz.github.io/circles-and-lines/"> Circles and Lines</a></h6>
-                    <span> Generative art piece built using animated SVGs.
-                    </span>
-                </div>
-                <div class="image-container clickable">
-                    <!-- <img src="projects photo/circles_and_lines.jpeg"> -->
-                    <a href="https://frowenz.github.io/circles-and-lines/">
-                        <video src="projects photo/circles_and_lines.mp4" autoplay muted loop></video>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="text">
-                    <h6>
-                        <a
-                            href="https://github.com/frowenz/album-collage-generator/blob/main/more_examples/ALL_EXAMPLES.md">
-                            Album Collage Generator </a>
-                    </h6>
-                    <span>
-                        Tools to download album covers en masse and arrange them by hue,
-                        saturation, and brightness into collages. Written in Python.
-                    </span>
-                </div>
-                <div class="image-container clickable">
-                    <a
-                        href="https://github.com/frowenz/album-collage-generator/blob/main/more_examples/ALL_EXAMPLES.md">
-                        <img src="projects photo/saturation_then_brightness.jpg">
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="text">
-                    <h6>
-                        <a href="https://frowenz.github.io/ray-marching/"> Ray Marching Demo </a>
-                    </h6>
-                    <span>
-                        A 2D demo of how ray marching with signed distance functions works. Written in Javascript.
-                    </span>
-                </div>
-                <div class="image-container clickable">
-                    <a href="https://frowenz.github.io/ray-marching/">
-                        <video src="projects photo/raymarching.mp4" autoplay muted loop></video>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="project-item">
-                <div class="text">
-                    <h6>
-                        <a href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet"> Synthetic ASL Dataset
+                    <div class="project-title">
+                        Election Trends Visualization
+                        <a href="https://frowenz.github.io/elections-visualization/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
                         </a>
-                    </h6>
-                    <span>
-                        I created this dataset while at LexSet and am now using it for a paper assesing how
-                        synthetic image data enhances classification performance.
-                    </span>
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            Visualizing presidential election results and state political lean over time with D3.js.
+                        </span>
+                    </div>
                 </div>
                 <div class="image-container clickable">
-                    <a href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet">
-                        <img src="projects photo/asl_collage.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="text">
-                    <h6>
-                        <a href="https://frowenz.github.io/florence-nightingale-vis/"> Florence Nightingale Data
-                            Visualization </a>
-                        </a>
-                    </h6>
-                    <span>
-                        I remade <a
-                            href="https://en.wikipedia.org/wiki/Florence_Nightingale#/media/File:Nightingale-mortality.jpg">this</a>
-                        famous data visualization by Florence Nightingale using D3.js. I also made a bar chart version.
-                    </span>
-                </div>
-                <div class="image-container clickable">
-                    <a href="https://frowenz.github.io/florence-nightingale-vis/">
-                        <img src="projects photo/nightingale.png">
+                    <a href="https://frowenz.github.io/elections-visualization/" target="_blank">
+                        <video src="projects media/map.mp4" autoplay muted loop></video>
                     </a>
                 </div>
             </div>
 
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Circles and Lines
+
+                        <a href="https://frowenz.github.io/circles-and-lines/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            Generative art piece built using animated SVGs and randomness.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://frowenz.github.io/circles-and-lines/" target="_blank">
+                        <video src="projects media/circles_and_lines.mp4" autoplay muted loop></video>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Album Collage Generator
+
+                        <a href="https://github.com/frowenz/album-collage-generator/blob/main/more_examples/ALL_EXAMPLES.md"
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            Tools to download album covers en masse and arrange them by hue,
+                            saturation, and brightness into collages. Written in Python.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://github.com/frowenz/album-collage-generator/blob/main/more_examples/ALL_EXAMPLES.md"
+                        target="_blank">
+                        <img src="projects media/saturation_then_brightness.jpg">
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Synthetic ASL Dataset
+                        <a href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            Procedurally generated images. I am writing a paper assessing how
+                            synthetic data affect classification performance.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet" target="_blank">
+                        <img src="projects media/asl_collage.jpg">
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        2D Ray Marching
+
+                        <a href="https://frowenz.github.io/ray-marching/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+
+
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            A 2D demo of ray marching with signed distance functions. Written in JavaScript.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://frowenz.github.io/ray-marching/" target="_blank">
+                        <video src="projects media/raymarching.mp4" autoplay muted loop></video>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Florence Nightingale Vis
+                        <a href="https://frowenz.github.io/florence-nightingale-vis/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            I remade <a
+                                href="https://en.wikipedia.org/wiki/Florence_Nightingale#/media/File:Nightingale-mortality.jpg"
+                                target="_blank">this</a>
+                            famous data visualization using D3.js. I also made a bar chart
+                            version.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://frowenz.github.io/florence-nightingale-vis/" target="_blank">
+                        <img src="projects media/nightingale.png">
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
-    </div>
+
     <span class="tooltiptext">Copied</span>
     <div id="canvas-container">
-        <div id="refreshIcon" onclick=randomizeShape()>
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-                <path d="M320 146s24.36-12-64-12a160 160 0 10160 160" fill="none" stroke="currentColor"
-                    stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" />
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                    d="M256 58l80 80-80 80" />
+
+        <div id="refresh-icon" onclick=randomizeShape()>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                <path d="M21 3v5h-5" />
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                <path d="M8 16H3v5" />
             </svg>
 
-
-
         </div>
-        <canvas id="canvas" onclick=redirectToDesmos()></canvas>
+        <canvas id="canvas" class="unselectable" onclick=redirectToDesmos()></canvas>
     </div>
-    <!-- workaround for italics not taking a second to load -->
-    <div style="opacity: 0; font-size: 0; position: absolute; font-style: italic;">
-        <span class="clickable">Hidden text</span>
-    </div>
-    <script src="shapeRedirect.js"></script>
-    <!-- <script src="scrollHandler.js"></script> -->
+
+    <script src="scripts/shape-redirect.js"></script>
 </body>

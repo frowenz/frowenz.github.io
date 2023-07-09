@@ -1,5 +1,9 @@
+/* ---- Top Level Rules ----- */
+
 :root {
+    /*  Old Colors */
     /* --highlight-color: #98ff98; */
+    /* --highlight-color: #8afbff; */
     /* --primary-color: #6a4b81; */
 
     --primary-hue: 268;
@@ -11,8 +15,6 @@
     --highlight-saturation: 100%;
     --highlight-lightness: 77%;
     --highlight-color: hsl(var(--highlight-hue), var(--highlight-saturation), var(--highlight-lightness));
-    /* --highlight-color: #8afbff; */
-
 }
 
 html {
@@ -22,7 +24,6 @@ html {
 body {
     background-color: var(--primary-color);
     font-family: 'Source Code Pro', monospace;
-    font-weight: 0;
     color: white;
     width: 100dvw;
     height: 100dvh;
@@ -30,37 +31,9 @@ body {
     overflow: overlay
 }
 
-*::-webkit-scrollbar {
-    background-color: transparent;
-    width: 10px;
+svg {
+    fill: white;
 }
-
-*::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-
-*::-webkit-scrollbar-thumb {
-    border: 3px solid transparent;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-}
-
-.line {
-    display: inline-block;
-    width: 100%;
-    border-bottom: 0.5px solid rgb(255, 255, 255);
-    vertical-align: middle;
-}
-
-/* .flex-container:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-
-.flex-container:hover::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-} */
 
 a {
     color: white;
@@ -73,34 +46,11 @@ a:hover {
     text-decoration: none;
 }
 
-#text-container {
-    position: fixed;
-    display: flex;
-    padding: 75px;
-    padding-right: 0px;
-    width: 725px;
-    height: 100%;
-    flex-direction: column;
-    /* overflow: overlay; */
-    z-index: 1;
-}
 
 .icon {
     justify-self: center;
     height: auto;
     max-width: 100%;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scrollbar-width: none;
-    width: 100%;
-    height: 100%;
-
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
 }
 
 .unselectable {
@@ -117,6 +67,149 @@ a:hover {
     -ms-user-select: text;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.nav-options {
+    cursor: pointer;
+    border-radius: 3.5px;
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+    width: fit-content;
+    transition: background-color 0.2s ease;
+}
+
+/* .line {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 0.5px solid rgb(255, 255, 255);
+    vertical-align: middle;
+} */
+
+/* ---- Scrollbar ---- */
+
+*::-webkit-scrollbar {
+    background-color: transparent;
+    width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 3.5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.33);
+}
+
+/* ---- Header and Navigation ---- */
+
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#my-name {
+    font-weight: 1000;
+    font-size: 18px;
+}
+
+#nav .nav-options:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.selected-page:hover {
+    font-style: unset !important;
+}
+
+#nav {
+    display: flex;
+    width: fit-content;
+    flex-direction: column
+}
+
+#dividing-box {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    border-left: solid 0.5px;
+    border-right: solid 0.5px;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 7.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+#dividing-box svg {
+    max-height: 37.5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#dividing-box svg path {
+    stroke-width: 0.75;
+}
+
+#selector-arrow {
+    display: block;
+    position: absolute;
+    padding-left: 5px;
+    padding-top: 0px;
+    transition: padding-top 0.3s ease;
+}
+
+/* ---- Text, About, Projects ---- */
+
+#text-container {
+    position: fixed;
+    display: flex;
+    padding: 75px;
+    padding-right: 0px;
+    width: 725px;
+    height: 100%;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Used for the about and projects sections */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+    scrollbar-gutter: stable;
+}
+
+.projects {
+    grid-gap: 7px;
+    width: 85%;
+    height: 100%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+}
+
+
+.github {
+    display: flex;
+    max-width: fit-content;
+}
+
 .github:hover .icon {
     fill: var(--highlight-color);
 }
@@ -125,19 +218,26 @@ a:hover {
     color: var(--highlight-color);
 }
 
-.info:hover .icon {
+.email {
+    cursor: copy;
+    display: flex;
+    max-width: fit-content;
+}
+
+.email:hover .icon {
     fill: var(--highlight-color);
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
-.info:hover .mail {
+.email:hover .mail-image {
     /* filter: invert(6%) sepia(4%) saturate(2802%) hue-rotate(63deg) brightness(95%) contrast(86%); */
     /* filter: invert(13%) sepia(29%) saturate(699%) hue-rotate(58deg) brightness(107%) contrast(101%); */
     filter: invert(14%) sepia(17%) saturate(1105%) hue-rotate(149deg) brightness(102%) contrast(106%);
 }
 
-svg {
-    fill: white;
+.mail-image {
+    margin-top: auto;
+    margin-bottom: auto
 }
 
 .tooltiptext {
@@ -150,9 +250,103 @@ svg {
     padding: 1.5px;
     padding-right: 5px;
     padding-left: 5px;
-    border-radius: 3px;
+    border-radius: 3.5px;
     transition: all 0.5s ease;
 }
+
+/* ----- Project Page ----- */
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-item .text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-item .text span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-item {
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: stretch;
+    flex-direction: row-reverse;
+    width: calc(100% - 7px);
+    border-radius: 3.5px;
+}
+
+.project-item .image-container {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: right;
+}
+
+.project-title {
+    border-top-right-radius: 3.5px;
+    height: 40px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: rgba(0, 0, 0, .15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+}
+
+.project-title svg {
+    height: 25px;
+    width: 25px;
+    padding: 4.5px;
+    border-radius: 3.5px;
+    transition: background-color 0.2s ease;
+}
+
+.project-title svg:hover {
+    background-color: hsl(var(--primary-hue),
+            var(--primary-saturation),
+            calc(var(--primary-lightness) * 0.85));
+}
+
+.project-description {
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.project-item img, video {
+    height: max(calc((100dvh - 232.5px) / 5), 110px);
+    aspect-ratio: 1;
+    object-fit: cover;
+    vertical-align: middle;
+    border-top-left-radius: 3.5px;
+    border-bottom-left-radius: 3.5px;
+}
+
+/* Storage  */
+/* .project-item img, video {
+    padding: 6.5px;
+    width: 150px;
+    margin-right: 20px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: calc(min(100%, 175px));
+    object-fit: contain;
+} */
+
+/* ---- Canvas ---- */
 
 #canvas-container {
     position: fixed;
@@ -160,7 +354,7 @@ svg {
     right: 0px;
     margin-right: calc((calc(100dvw - 712px) - min((100dvw - 712px), 60dvh)) / 2);
     width: calc(100dvw - 712px);
-    height: auto;
+    aspect-ratio: 1;
     max-height: 60dvh;
     max-width: 60dvh;
     transform: translate(0, calc((100dvh - min((100dvw - 712px), 60dvh)) / 2));
@@ -169,132 +363,35 @@ svg {
 #canvas {
     width: 100%;
     height: 100%;
+    transition: transform 0.2s ease;
 }
 
-#refreshIcon {
+#refresh-icon {
+    display: flex;
     position: absolute;
-    width: 22.5px;
-    height: 22.5px;
+    width: max(4.5%, 22.5px);
+    height: max(4.5%, 22.5px);
     right: 7.5%;
-    bottom: 5px;
+    bottom: 7.5%;
+    padding: 1.5px;
+    transition: background-color 0.2s ease;
 }
 
-#refreshIcon:hover {
+#refresh-icon:hover {
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 3.5px;
 }
 
-#refreshIcon path {
-    stroke: hsl(var(--primary-hue), var(--primary-saturation), var(--highlight-lightness));
-    stroke-width: 20;
-}
-
-#refreshIcon:hover path {
-    stroke: var(--highlight-color);
-}
-
-.clickable {
-    cursor: pointer;
-}
-
-.nav .clickable:hover {
-    font-style: italic;
-}
-
-.selected-page:hover {
-    font-style: unset !important;
-}
-
-#divider {
-    display: flex;
-    flex-grow: 1;
-    height: 100%;
-    border-left: solid 0.5px;
-    border-right: solid 0.5px;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    position: relative;
-    /* Add this */
-    overflow: hidden;
-    /* Hide the overflowing part of the SVGs */
-}
-
-#divider svg {
-    max-height: 37.5px;
+#refresh-icon svg {
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    height: 100%;
+    fill: none;
 }
 
-#divider svg path {
-    stroke-width: 0.75;
-}
-
-.project-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* margin-bottom: 10px;
-    margin-top: 10px */
-}
-
-.project-item .text {
-    flex: 1 1 62.5%;
-    margin: auto;
-}
-
-.project-item .text span {
-    display: block;
-    /* margin: 10px; */
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.project-item .text h6 {
-    font-size: 0.85rem;
-}
-
-.project-item {
-    display: flex;
-    align-items: stretch;
-    flex-direction: row-reverse;
-    width: 90%;
-    /* margin-left: 2.5%; */
-}
-
-.project-item .image-container {
-    flex: 0 1 37.5%;
-    display: flex;
-    /* padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px; */
-    box-sizing: border-box;
-    justify-content: right;
-}
-
-.project-item img, video {
-    padding: 6.5px;
-    height: 155px;
-    width: 155px;
-    object-fit: cover;
-    margin-right: 20px;
-    vertical-align: middle;
-    /* margin: auto;
-    margin-left: auto;
-    margin-right: auto; */
-    /* max-width: 100%; */
-    /* max-height: calc(min(100%, 175px)); */
-    /* object-fit: contain; */
-}
-
-.nav {
-    display: flex;
-}
-
-.indented-list {
-    list-style-type: decimal;
-    padding-left: 40px;
+#refresh-icon path {
+    stroke: hsl(var(--primary-hue), var(--primary-saturation), var(--highlight-lightness));
+    stroke-width: 1;
 }
 
 
@@ -311,21 +408,27 @@ svg {
         padding-right: 0px;
         width: 550px;
     }
+
+    .project-item img, video {
+        height: max(calc((100dvh - 182.5px) / 5), 110px);
+    }
 }
 
 @media (max-width: 599px) {
+    #dividing-box {
+        display: none;
+    }
+    
+    /* Still deciding whether to include this */
+    #nav {
+        transform: translate(calc(22.25dvw - 25px), 0);
+        /* display: none; */
+    }
+
     #text-container {
         width: 78%;
         padding: 25px;
         padding-right: 0px;
-    }
-
-    #divider {
-        display: none;
-    }
-
-    .nav {
-        transform: translate(calc(22.25dvw - 25px), 0);
     }
 
     .tooltiptext {
@@ -334,33 +437,41 @@ svg {
         top: unset;
     }
 
+    /* ----- Projects ----- */
+
+    .projects {
+        width: 100%;
+    }
+
     .project-item {
         display: block;
         margin-bottom: 20px;
-        /* flex-direction: column; */
     }
 
     .project-item .image-container {
-        /* padding-left: 15px;
-        padding-right: 15px; */
-
-        /* justify-content: center; */
-
         padding: 0px;
-        padding-top: 10px;
-        padding-bottom: 10px;
         justify-content: left;
+    }
+
+    .project-title {
+        border-top-left-radius: 3.5px;
+    }
+
+    .project-description {
+        border-top-left-radius: 3.5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .project-item img, video {
         margin: unset;
         padding: unset;
         height: unset;
-        width: 250px;
+        width: 100%;
+        border-radius: unset;
+        border-bottom-left-radius: 3.5px;
+        border-bottom-right-radius: 3.5px;
         object-fit: contain;
-    }
-
-    .nav {
-        display: none;
+        aspect-ratio: unset;
     }
 }

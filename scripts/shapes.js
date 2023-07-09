@@ -1,3 +1,6 @@
+// Much of this code is just ported from Desmos or is the output of scripts
+// Hence, it is not very readable
+
 // Constant for matrix rotations
 const m1 = Math.PI / 2 - Math.atan((3 + Math.sqrt(5)) / 4)
 const m2 = Math.PI / 2 - Math.atan((3 - Math.sqrt(5)) / 4)
@@ -46,7 +49,7 @@ function updateVertices(R, R0, T_x, T_y) {
     h = A.map(angle => p(R0, Math.PI - m1, angle, T_x, T_y));
 }
 
-// A wrote a script using adjacency matrices to generate the faces
+// I wrote a script using adjacency matrices to generate the faces
 function updatesFace() {
     if (shapeType == "iso") {
         faces = [
@@ -298,7 +301,6 @@ function updatesFace() {
     }
 }
 
-
 function drawFaces() {
     for (let i = 0; i < faces.length; i++) {
         drawFace(faces[i][0], faces[i][1], faces[i][2]);
@@ -322,10 +324,11 @@ function drawFace(v1, v2, v3) {
 // MAX R that fits in the canvas is 250
 var canvas_edge = 900
 var scale = 0.416
-
-
 var shapeType, T_x, T_y, R, R0, noStellation, stellation, speedR, speedR0;
 var plusMinus, plusMinus2, spin, flipRadii, timeOffset;
+const R_Max = canvas_edge * scale
+const R0_Max = canvas_edge * 0.9 * scale
+
 function randomizeShape() {
     shapeType = randomWithProbability(["iso", "dodeca", "both"]);
     T_x = 0;
@@ -355,15 +358,11 @@ function randomizeShape() {
     timeOffset = [(Math.floor(Math.random() * 6.28318530718)), (Math.floor(Math.random() * 10000) + 1)];
 }
 
-
 function randomWithProbability(arr) {
     var idx = Math.floor(Math.random() * arr.length);
     return arr[idx];
 }
 randomizeShape()
-
-const R_Max = canvas_edge * scale
-const R0_Max = canvas_edge * 0.9 * scale
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -396,6 +395,7 @@ function animate() {
 var ctx, canvas;
 var mouse_x = 0;
 var mouse_y = 0;
+
 window.addEventListener("load", () => {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d", { antialias: false });

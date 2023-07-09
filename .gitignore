@@ -1,6 +1,10 @@
 .DS_Store
-src/.DS_Store
+**/.DS_Store
+
 computeFaces.py
 stellated_dodecahedron.js
-unused
 
+frowenz.github.io.git/
+icons/icon.psd
+
+unused
