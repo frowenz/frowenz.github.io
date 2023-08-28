@@ -51,43 +51,45 @@
 
                 <!-- <div class="line"></div>  -->
 
-                    <!-- Sin Wave SVGS -->
-                    <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path id="wave"
-                            d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
-                            fill="none" stroke="white" stroke-width="1">
-                            <animateTransform id="sinwave5" attributeName="transform" type="translate" from="-100 0"
-                                to="0 0" dur="5s" repeatCount="indefinite" />
-                        </path>
-                    </svg>
+                <!-- Sin Wave SVGS -->
+                <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path id="wave"
+                        d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
+                        fill="none" stroke="white" stroke-width="1">
+                        <animateTransform id="sinwave5" attributeName="transform" type="translate" from="-100 0"
+                            to="0 0" dur="5s" repeatCount="indefinite" />
+                    </path>
+                </svg>
 
-                    <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path id="wave"
-                            d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
-                            fill="none" stroke="white" stroke-width="1">
-                            <animateTransform attributeName="transform" type="translate" from="0 0" to="-100 -0"
-                                dur="10s" repeatCount="indefinite" />
-                        </path>
-                    </svg>
+                <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path id="wave"
+                        d="M 0 18.75 Q 25 37.5 50 18.75 Q 75 0 100 18.75 Q 125 37.5 150 18.75 Q 175 0 200 18.75"
+                        fill="none" stroke="white" stroke-width="1">
+                        <animateTransform attributeName="transform" type="translate" from="0 0" to="-100 -0" dur="10s"
+                            repeatCount="indefinite" />
+                    </path>
+                </svg>
 
-                </div>
+            </div>
 
-                <div id="nav">
-                    <span id="selector-arrow"> > </span>
-                    <span id="view-about" class="nav-options unselectable selected-page" onclick="viewAbout()">About
-                    </span>
-                    <span id="view-projects" class="nav-options unselectable" onclick="viewProjects()">Projects </span>
-                </div>
+            <div id="nav">
+                <span id="selector-arrow"> > </span>
+                <span id="view-about" class="nav-options unselectable selected-page" onclick="viewAbout()">About
+                </span>
+                <span id="view-projects" class="nav-options unselectable" onclick="viewProjects()">Projects </span>
+            </div>
 
         </span>
 
         <div class="flex-container about">
             <span>
                 Welcome to my site! I am an undergraduate at the University of Chicago ('24) pursuing
-                degrees in Computer Science and Philosophy.
+                degrees in Computer Science with a specialization in Machine Learning and Philosophy.
+                
                 <br><br>
+
                 Currently, I work as a software developer at the
                 <a href="http://salavon.com/" target="_blank"> Jason Salavon Studio</a> where we just launched <a
                     href="https://www.latentculture.com/todem/?ae=1" target="_blank">TODEM</a>, a massive animated art
@@ -142,7 +144,7 @@
         </div>
         <div class="flex-container projects" style="display:none">
             <!-- TO DO : Turn These Into Components of Some Sort -->
-            
+
             <div class="project-item">
                 <div class="text">
                     <div class="project-title">
@@ -151,7 +153,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                                 <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
                                 <path
-                                d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
                             </svg>
                         </a>
                     </div>
@@ -164,6 +166,84 @@
                 <div class="image-container clickable">
                     <a href="https://www.latentculture.com/todem/?ae=1" target="_blank">
                         <img src="projects media/TODEM.png"></img>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Rust Database
+                        <a href="https://github.com/frowenz/rust-database/tree/main/src/heapstore/src" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            A storage manager for a relational database utilizing heap files. Designed slotted pages and
+                            implemented aggregate, groupby, and join from scratch.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://github.com/frowenz/rust-database/tree/main/src/heapstore/src" target="_blank">
+                        <image src="projects media/crustydb.png"></image>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Every Game of Tic Tac Toe
+                        <a href="https://owenfahey.com/all-tic-tac-toe-games/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            All valid tic tac toe games playing at once with a game location search feature. Built with
+                            Python and JavaScript.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://owenfahey.com/all-tic-tac-toe-games/" target="_blank">
+                        <image src="projects media/tic_tac_toe.png"></image>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="text">
+                    <div class="project-title">
+                        Sliced Colorspace Color Picker
+                        <a href="https://owenfahey.com/colorspace-slicer/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+                                <path
+                                d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <span>
+                            Pick colors from specified slices of the RGB cube, HSL double-cone or CIELAB gamut.
+                        </span>
+                    </div>
+                </div>
+                <div class="image-container clickable">
+                    <a href="https://owenfahey.com/colorspace-slicer/" target="_blank">
+                        <video src="projects media/colorslicer.mp4" autoplay muted loop></video>
                     </a>
                 </div>
             </div>
@@ -192,57 +272,6 @@
                     </a>
                 </div>
             </div>
-
-            <div class="project-item">
-                <div class="text">
-                    <div class="project-title">
-                        Rust Database
-                        <a href="https://github.com/frowenz/rust-database/tree/main/src/heapstore/src" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
-                                <path
-                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <span>
-                            A storage manager for a relational database utilizing heap files. Designed slotted pages and implemented aggregate, groupby, and join from scratch.                    
-                        </span>
-                    </div>
-                </div>
-                <div class="image-container clickable">
-                    <a href="https://github.com/frowenz/rust-database/tree/main/src/heapstore/src" target="_blank">
-                        <image src="projects media/crustydb.png" ></image>
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="text">
-                    <div class="project-title">
-                        Every Game of Tic Tac Toe
-                        <a href="https://owenfahey.com/all-tic-tac-toe-games/" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                                <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
-                                <path
-                                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="project-description">
-                        <span>
-                            All valid tic tac toe games playing at once with a game location search feature. Built with Python and JavaScript.
-                        </span>
-                    </div>
-                </div>
-                <div class="image-container clickable">
-                    <a href="https://owenfahey.com/all-tic-tac-toe-games/" target="_blank">
-                        <image src="projects media/tic_tac_toe.png" ></image>
-                    </a>
-                </div>
-            </div>
-
 
             <div class="project-item">
                 <div class="text">
@@ -305,8 +334,7 @@
                 <div class="text">
                     <div class="project-title">
                         Blending Mode Canvas
-                        <a href="https://owenfahey.com/blend-mode-trails/"
-                            target="_blank">
+                        <a href="https://owenfahey.com/blend-mode-trails/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                                 <path d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
                                 <path
@@ -321,8 +349,7 @@
                     </div>
                 </div>
                 <div class="image-container clickable">
-                    <a href="https://owenfahey.com/blend-mode-trails/"
-                        target="_blank">
+                    <a href="https://owenfahey.com/blend-mode-trails/" target="_blank">
                         <img src="projects media/blending.png">
                     </a>
                 </div>
@@ -342,7 +369,7 @@
                     </div>
                     <div class="project-description">
                         <span>
-                            Procedurally generated images. I am writing a paper assessing how
+                            Procedurally generated images of American Sign Language. I am writing a paper assessing how
                             synthetic data affects classification performance.
                         </span>
                     </div>
