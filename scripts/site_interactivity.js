@@ -25,6 +25,10 @@ function redirectToGithub() {
     window.open("https://github.com/frowenz", "_blank");
 }
 
+function redirectToResume() {
+    window.open("https://drive.google.com/file/d/1TzVhoJxnV2pIBh6ntMeJYYzwlzb6nnah/view?usp=sharing", "_blank");
+}
+
 // Turns off projects and turns on about
 function viewAbout() {
     let aboutElement = document.getElementsByClassName('about')[0];
