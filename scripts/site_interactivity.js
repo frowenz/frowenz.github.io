@@ -26,7 +26,7 @@ function redirectToGithub() {
 }
 
 function redirectToResume() {
-    window.open("https://drive.google.com/file/d/1TzVhoJxnV2pIBh6ntMeJYYzwlzb6nnah/view?usp=sharing", "_blank");
+    window.open("https://owenfahey.com/resume/Owen-Fahey-Resume.pdf", "_blank");
 }
 
 // Turns off projects and turns on about
