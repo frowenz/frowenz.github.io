@@ -80,30 +80,29 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// Annoying scrollbar 
+// Annoying scrollbar fix for Firefox
 window.onload = function () {
     // Check if the browser is Firefox
     var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     if (isFirefox) {
-        // Get the first element with class "projects"
         var element = document.querySelector('.projects');
 
         if (element) {
-            // Add 15px of padding to the right
             element.style.paddingRight = '10px';
         }
     }
 };
 
 async function getLastUpdatedDate(owner, repo) {
+    console.log(`https://api.github.com/repos/${owner}/${repo}`)
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        const date = new Date(data.updated_at);
+        const date = new Date(data.pushed_at);
 
         // Formatting the date as MM-DD-YYYY
         const formattedDate = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${date.getFullYear()}`;
@@ -113,7 +112,6 @@ async function getLastUpdatedDate(owner, repo) {
     }
 }
 
-// Example usage:
 getLastUpdatedDate('frowenz', 'frowenz.github.io').then(date => {
     document.getElementById('last-updated-date').innerHTML = date;
 });
