@@ -18,7 +18,7 @@ function copyEmailToClipboard() {
 
     // Clear any existing fade out timer and set a new one
     clearTimeout(tooltipTimeout);
-    tooltipTimeout =  setTimeout(() => { tooltip.style.opacity = 0; }, 1000);
+    tooltipTimeout = setTimeout(() => { tooltip.style.opacity = 0; }, 1000);
 }
 
 function redirectToGithub() {
@@ -38,7 +38,7 @@ function viewAbout() {
     projectsElement.style.display = "none";
     aboutElement.style.display = "flex";
     selectorArrow.style.paddingTop = "0px";
-    
+
     swapSelected();
 }
 
@@ -76,12 +76,12 @@ document.addEventListener("keydown", function (event) {
     } else if (event.key === "ArrowDown") {
         viewProjects()
     } else if (event.key === "R" || event.key === "r") {
-        onclick=randomizeShape()
+        onclick = randomizeShape()
     }
 });
 
 // Annoying scrollbar 
-window.onload = function() {
+window.onload = function () {
     // Check if the browser is Firefox
     var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
@@ -95,3 +95,26 @@ window.onload = function() {
         }
     }
 };
+
+async function getLastUpdatedDate(owner, repo) {
+    try {
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        const date = new Date(data.updated_at);
+
+        // Formatting the date as MM-DD-YYYY
+        const formattedDate = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${date.getFullYear()}`;
+        return formattedDate;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Example usage:
+getLastUpdatedDate('frowenz', 'frowenz.github.io').then(date => {
+    document.getElementById('last-updated-date').innerHTML = date;
+});
+

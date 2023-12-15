@@ -426,6 +426,20 @@ a:hover {
     stroke-width: 1;
 }
 
+#last-updated-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1.5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+#last-updated-date {
+
+}
+
 
 @media (max-width: 1000px) {
     #canvas-container {
@@ -468,11 +482,11 @@ a:hover {
         padding-right: 0px;
     }
 
-    .tooltiptext {
+    /* .tooltiptext {
         right: 25px;
         bottom: 25px;
         top: unset;
-    }
+    } */
 
     /* ----- Projects ----- */
 
