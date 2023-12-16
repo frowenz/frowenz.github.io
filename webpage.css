@@ -216,16 +216,16 @@ a:hover {
 }
 
 
-.github, .resume {
+.company-logo, .resume {
     display: flex;
     max-width: fit-content;
 }
 
-.github:hover .icon, .resume:hover .icon {
+.company-logo:hover .icon, .resume:hover .icon {
     fill: var(--highlight-color);
 }
 
-.github:hover .selectable, .resume:hover .selectable {
+.company-logo:hover .selectable, .resume:hover .selectable {
     color: var(--highlight-color);
 }
 

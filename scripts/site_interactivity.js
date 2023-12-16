@@ -25,6 +25,10 @@ function redirectToGithub() {
     window.open("https://github.com/frowenz", "_blank");
 }
 
+function redirectToLinkedIn() {
+    window.open("https://www.linkedin.com/in/owen-fahey/", "_blank");
+}
+
 function redirectToResume() {
     window.open("https://owenfahey.com/resume/Owen-Fahey-Resume.pdf", "_blank");
 }
