@@ -1,14 +1,3 @@
-
-
-
-#doiload{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    z-index: 1000000000;
-}
-
 /* ---- Top Level Rules ----- */
 
 :root {
@@ -82,21 +71,7 @@ a:hover {
     cursor: pointer;
 }
 
-.nav-options {
-    cursor: pointer;
-    border-radius: 3.5px;
-    padding-left: 17.5px;
-    padding-right: 17.5px;
-    width: fit-content;
-    transition: background-color 0.2s ease;
-}
 
-/* .line {
-    display: inline-block;
-    width: 100%;
-    border-bottom: 0.5px solid rgb(255, 255, 255);
-    vertical-align: middle;
-} */
 
 /* ---- Scrollbar ---- */
 
@@ -146,6 +121,15 @@ a:hover {
     display: flex;
     width: fit-content;
     flex-direction: column
+}
+
+.nav-options {
+    cursor: pointer;
+    border-radius: 3.5px;
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+    width: fit-content;
+    transition: background-color 0.2s ease;
 }
 
 #dividing-box {
@@ -216,29 +200,21 @@ a:hover {
 }
 
 
-.company-logo, .resume {
+.redirect-container {
     display: flex;
     max-width: fit-content;
 }
 
-.company-logo:hover .icon, .resume:hover .icon {
-    fill: var(--highlight-color);
-}
-
-.company-logo:hover .selectable, .resume:hover .selectable {
+.redirect-container:hover .selectable, .redirect-container:hover .icon {
     color: var(--highlight-color);
+    fill: var(--highlight-color);
 }
 
 .email {
     cursor: copy;
-    display: flex;
-    max-width: fit-content;
 }
 
-.email:hover .icon {
-    fill: var(--highlight-color);
-}
-
+/* This site is used to create a filter that changes white to given color */
 /* https://codepen.io/sosuke/pen/Pjoqqp */
 .email:hover .mail-image {
     /* filter: invert(6%) sepia(4%) saturate(2802%) hue-rotate(63deg) brightness(95%) contrast(86%); */
@@ -436,10 +412,6 @@ a:hover {
     text-decoration: none;
 }
 
-#last-updated-date {
-
-}
-
 
 @media (max-width: 1000px) {
     #canvas-container {
@@ -481,12 +453,6 @@ a:hover {
         padding: 25px;
         padding-right: 0px;
     }
-
-    /* .tooltiptext {
-        right: 25px;
-        bottom: 25px;
-        top: unset;
-    } */
 
     /* ----- Projects ----- */
 

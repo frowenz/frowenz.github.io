@@ -1,3 +1,8 @@
+/**
+ * This file is used to redirect the user to a desmos graph when the user hovers over the shape and clicks.
+ * This involves calculating the mouse position in relation to the boundary of the shape.
+ * The boundary of the shape is approximated by a circle with radius equal to the farthest point from the center of the shape.
+ */
 
 const cnvs = document.getElementById('canvas');
 const ctxx = cnvs.getContext('2d');
@@ -14,13 +19,14 @@ function getMousePosition(cnvs, event) {
     };
 }
 
+var mouseOnShape = false;
+// Listener that checks if the mouse is on the shape and handles changes accordingly
 document.addEventListener('mousemove', (event) => {
     var highlightColor = rootStyles.getPropertyValue('--highlight-color').trim();
     const distance = Math.sqrt(Math.pow((getMousePosition(cnvs, event).x - (cnvs.height/2) ), 2) + Math.pow((getMousePosition(cnvs, event).y - (cnvs.height/2)), 2));
     if (distance <= Math.max(Math.abs(R), Math.abs(R0))) {
         cnvs.style.cursor = "pointer";
         mouseOnShape = true;
-        // stroke_color = "#a4e2a9"
         stroke_color = highlightColor
     }
     else {
@@ -30,7 +36,6 @@ document.addEventListener('mousemove', (event) => {
     }
 });
 
-var mouseOnShape = false;
 function redirectToDesmos() {
     if (mouseOnShape) {
         window.open("https://www.desmos.com/calculator/fxpx9coioo")

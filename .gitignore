@@ -1,10 +1,12 @@
+# Mac Icons
 .DS_Store
-**/.DS_Store
+*/.DS_Store
 
+# Polyhedra creation scripts
 computeFaces.py
 stellated_dodecahedron.js
 
+# Misc
 frowenz.github.io.git/
 icons/icon.psd
-
 unused

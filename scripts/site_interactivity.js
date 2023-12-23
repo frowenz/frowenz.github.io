@@ -1,24 +1,31 @@
 var tooltipTimeout;
+// I want to avoid displaying my email in plain text, so keep it encoded until a user copies it
 function copyEmailToClipboard() {
+    // Clear any existing fade out timer
+    clearTimeout(tooltipTimeout);
+
     // Defining the encoded email
     const encodedEmail = '&#111;&#119;&#101;&#110;&#102;&#097;&#104;&#101;&#121;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;';
 
-    // Creating a div element and decoding the email
+    // Creating a div element to decode the email
     const div = document.createElement("div");
     div.innerHTML = encodedEmail;
     const decodedEmail = div.innerText;
 
     // Writing the decoded email to the clipboard
     navigator.clipboard.writeText(decodedEmail);
-
+    
     // Show the tooltip for a second
     let tooltip = document.getElementsByClassName('tooltiptext')[0];
     tooltip.innerHTML = "Copied!";
     tooltip.style.opacity = 1;
-
-    // Clear any existing fade out timer and set a new one
-    clearTimeout(tooltipTimeout);
+    
+    // Set a new phase out timer
     tooltipTimeout = setTimeout(() => { tooltip.style.opacity = 0; }, 1000);
+}
+
+function redirectTo(website) {
+    window.open(website, "_blank");
 }
 
 function redirectToGithub() {

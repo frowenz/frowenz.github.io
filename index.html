@@ -9,23 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Owen Fahey</title>
 
-    <!-- Base Styling -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;1,300&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,200&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;1,200;1,300&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;1,300&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;1,200&display=swap"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;1,200;1,300&display=swap"
             rel="stylesheet">
     </noscript>
 
@@ -33,6 +26,8 @@
     <link rel="icon" type="image/png" href="icons/icon.png" />
 
     <!-- Styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="webpage.css" />
 
     <!-- Scripts -->
@@ -49,8 +44,6 @@
             <span id="my-name"> Owen Fahey</span>
 
             <div id="dividing-box">
-
-                <!-- <div class="line"></div>  -->
 
                 <!-- Sin Wave SVGS -->
                 <svg viewBox="0 0 100 37.5" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +68,7 @@
 
             </div>
 
+            <!-- About & Project Navigation -->
             <div id="nav">
                 <span id="selector-arrow"> > </span>
                 <span id="view-about" class="nav-options unselectable selected-page" onclick="viewAbout()">About
@@ -91,25 +85,27 @@
 
                 <br><br>
 
-                Currently, I am building image processing tools as a software developer at the
-                <a href="http://salavon.com/" target="_blank"> Jason Salavon Studio</a>.
-                I am also a research assistant for
-                <a href="http://people.cs.uchicago.edu/~glk/" target="_blank">Prof. Gordon Kindlmann</a>
-                enhancing data visualization by creating personalized color spaces.
+                Currently, I am building image processing tools as a software developer at the <a
+                    href="http://salavon.com/" target="_blank"> Jason Salavon Studio</a>.
 
-                Previously, I
-                worked on <a href="https://lexset.ai" target="_blank"> Lexset.ai</a>'s procedural 3D scene and image
-                generator.
-                <br>
-                <br>
+                I am also a research assistant for <a href="http://people.cs.uchicago.edu/~glk/" target="_blank">Prof.
+                    Gordon Kindlmann</a> enhancing data visualization by creating personalized color spaces.
+
+                Previously, I worked on <a href="https://lexset.ai" target="_blank"> Lexset.ai</a>'s procedural 3D scene
+                and image generator.
+
+                <br><br>
+
                 I graduate in early June 2024 and am actively seeking post-graduation roles as a software engineer.
                 Feel free to reach out.
             </span>
 
             <div class="unselectable">
                 <br>
-                <div class="email" onclick=copyEmailToClipboard()>
 
+                <div class="redirect-container email" onclick=copyEmailToClipboard()>
+
+                    <!-- Email Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="15" height="15" draggable="false"
                         viewBox="0 0 512 512">
                         <path
@@ -117,18 +113,20 @@
                     </svg>
 
                     <span>&nbsp;</span>
+
+                    <!-- Note: Using image instead of text to avoid email scraping -->
                     <img src="icons/email.png" height="15" draggable="false" class="mail-image">
                 </div>
 
-                <div onclick="redirectToLinkedIn()" class="company-logo clickable">
-                    <svg xmlns="http://www.w3.org/2000/svg" class = "icon" width="15" height="15" viewBox="0 0 24 24">
+                <div onclick="redirectToLinkedIn()" class="redirect-container clickable">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="15" height="15" viewBox="0 0 24 24">
                         <path
                             d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                     </svg>
                     <span class="selectable">&nbsp;owen-fahey</span>
                 </div>
 
-                <div onclick="redirectToGithub()" class="company-logo clickable">
+                <div onclick="redirectToGithub()" class="redirect-container clickable">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512" width="15" height="15"
                         draggable="false">
                         <path
@@ -137,7 +135,7 @@
                     <span class="selectable">&nbsp;frowenz </span>
                 </div>
 
-                <div onclick="redirectToResume()" class="resume clickable">
+                <div onclick="redirectToResume()" class="redirect-container clickable">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="icon"
                         viewBox="0 0 16 16">
                         <path
@@ -147,15 +145,8 @@
                 </div>
             </div>
 
-            <!-- <span>
-                <br>
-                Credit to <a href="https://www.jessicad.ai/">Jessica Dai</a> and <a
-                    href="https://lucasgelfond.online/">Lucas Gelfond</a> for site inspiration.
-            </span> -->
-
         </div>
         <div class="flex-container projects" style="display:none">
-            <!-- TO DO : Turn These Into Components of Some Sort -->
             <div class="project-item">
                 <div class="text">
                     <div class="project-title">
@@ -277,9 +268,6 @@
                 </div>
             </div>
 
-
-
-
             <div class="project-item">
                 <div class="text">
                     <div class="project-title">
@@ -326,7 +314,6 @@
                     </a>
                 </div>
             </div>
-
 
             <div class="project-item">
                 <div class="text">
@@ -507,7 +494,7 @@
 
     <span class="tooltiptext">Copied</span>
     <div id="canvas-container">
-        <div id="refresh-icon" onclick=randomizeShape() title = "pssst.. try pressing the letter r">
+        <div id="refresh-icon" onclick=randomizeShape() title="pssst.. try pressing the letter r">
 
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -518,6 +505,7 @@
             </svg>
 
         </div>
+
         <canvas id="canvas" class="unselectable" onclick=redirectToDesmos()></canvas>
     </div>
 
