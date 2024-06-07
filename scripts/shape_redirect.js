@@ -4,6 +4,8 @@
  * The boundary of the shape is approximated by a circle with radius equal to the farthest point from the center of the shape.
  */
 
+console.log("here")
+
 const cnvs = document.getElementById('canvas');
 const ctxx = cnvs.getContext('2d');
 
