@@ -106,7 +106,6 @@ window.onload = function () {
 };
 
 async function getLastUpdatedDate(owner, repo) {
-    console.log(`https://api.github.com/repos/${owner}/${repo}`)
     try {
         const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
         if (!response.ok) {
